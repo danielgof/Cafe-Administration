@@ -6,6 +6,7 @@ class Database:
     self.connection = self.createConnection(database, user, password, host, port)
 
   def createConnection(self, database, user, password, host, port):
+    
     connection = None
     try:
       connection = psycopg2.connect(
@@ -22,9 +23,7 @@ class Database:
   def get_data(self):
 
     cursor = self.con.cursor()
-    cursor.execute("SELECT * FROM client")
-    for row in cursor:
-      print(row)
+    return self.ExecuteReadQuery(cursor.execute("SELECT * FROM client"))
 
 
 
