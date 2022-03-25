@@ -10,8 +10,8 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class ClientService {
-
+public class ClientService
+{
     private final ClientRepository clientRepository;
 
     @Autowired
@@ -19,17 +19,17 @@ public class ClientService {
         this.clientRepository = ClientRepository;
     }
 
-    public List<Client> getClients() {
-
+    public List<Client> getClients()
+    {
         return clientRepository.findAll();
-
     }
 
     public void addNewClient(Client student){
 
         Optional<Client> studentOptional = clientRepository
                 .findStudentByEmail(student.getEmail());
-        if (studentOptional.isPresent()) {
+        if (studentOptional.isPresent())
+        {
             throw new IllegalStateException("email taken");
         }
         clientRepository.save(student);
@@ -38,7 +38,8 @@ public class ClientService {
     public void deleteClient(Long studentId) {
 
         boolean exists = clientRepository.existsById(studentId);
-        if (!exists) {
+        if (!exists)
+        {
             throw new IllegalStateException("student with id " +
                     studentId + " does not exists");
         }
@@ -46,23 +47,24 @@ public class ClientService {
     }
 
     @Transactional
-    public void updateClient(Long studentId, String name, String email) {
+    public void updateClient(Long studentId, String name, String email, String phonenumber) {
         Client student = clientRepository.findById(studentId)
                 .orElseThrow(() -> new IllegalStateException("student with id " + studentId + " does not exists"));
 
-        if (name != null && name.length() > 0 && !Objects.equals(student.getName(), name)) {
+        if (name != null && name.length() > 0 && !Objects.equals(student.getName(), name))
+        {
             student.setName(name);
         }
 
-        if (email != null && email.length() > 0 && !Objects.equals(student.getName(), email)) {
+        if (email != null && email.length() > 0 && !Objects.equals(student.getName(), email))
+        {
             Optional<Client> studentOptional = clientRepository
                     .findStudentByEmail(student.getEmail());
-            if (studentOptional.isPresent()) {
+            if (studentOptional.isPresent())
+            {
                 throw new IllegalStateException("email taken");
             }
             student.setEmail(email);
-
-
         }
     }
 }

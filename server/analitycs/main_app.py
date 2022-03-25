@@ -1,18 +1,16 @@
-from flask import Flask
-from db import Database
+from flask import Flask, jsonify
+from req import Request
+
 
 app = Flask(__name__)
 
 
 
-@app.route("/index", methods = ['GET', 'POST'])
-def index():
-    return "hello world!"
-
-@app.route("/data", methods = ['GET'])
-def get_data():
-    
-    Database.print_data()
+@app.route("/clients", methods = ['GET','POST'])
+def client_info():
+    result = Request.get_data()
+    return jsonify(result)
 
 
-app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

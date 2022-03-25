@@ -7,8 +7,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/v1/client")
-public class ClientController {
-
+public class ClientController
+{
     private final ClientService clientService;
 
     @Autowired
@@ -35,7 +35,9 @@ public class ClientController {
     public void updateStudent(
             @PathVariable("clientId") Long studentId,
             @RequestParam(required = false) String name,
-            @RequestParam(required = false) String email) {
-        clientService.updateClient(studentId, name, email);
+            @RequestParam(required = false) String email,
+            @RequestParam(required = false) String phonenumber)
+    {
+        clientService.updateClient(studentId, name, email, phonenumber);
     }
 }

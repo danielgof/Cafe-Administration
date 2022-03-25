@@ -1,15 +1,13 @@
 package dan.cafe.cafe.student;
 
-
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
 
 @Entity
 @Table
-public class Client {
-
+public class Client
+{
     @Id
     @SequenceGenerator(
             name = "client_sequence",
@@ -25,25 +23,27 @@ public class Client {
     private String lastname;
     private String email;
     private LocalDate dob;
+    private String phonenumber;
     @Transient
     private Integer age;
 
-    public Client() {
-    }
+    public Client() {    }
 
-    public Client(Long id, String name, String lastname, String email, LocalDate dob) {
+    public Client(Long id, String name, String lastname, String email, LocalDate dob, String phonenumber) {
         this.id = id;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.dob = dob;
+        this.phonenumber = phonenumber;
     }
 
-    public Client(String name, String lastname, String email, LocalDate dob) {
+    public Client(String name, String lastname, String email, LocalDate dob, String phonenumber) {
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.dob = dob;
+        this.phonenumber = phonenumber;
     }
 
     public Long getId() {
@@ -87,13 +87,15 @@ public class Client {
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", name='" + lastname + '\'' +
-                ", email='" + email + '\'' +
+                ", lastname='" + lastname + '\'' +
                 ", dob=" + dob +
+                ", email='" + email + '\'' +
+                ", phonenumber='" + phonenumber + '\'' +
                 ", age=" + age +
                 '}';
     }
