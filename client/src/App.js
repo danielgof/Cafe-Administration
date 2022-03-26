@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import QuoteList from './QuoteList'
-import AddQuoteForm from './AddQuoteForm'
+import ClientList from './ClientList'
+import AddClientForm from './AddClientForm'
 import axios from 'axios'
 import './App.css';
 
 
-const QUOTE_SERVICE_URL = 'http://localhost:8080/api/v1/client'
+const CLIENT_SERVICE_URL = 'http://localhost:8080/api/v1/client'
 
 class App extends Component {
   constructor(props) {
@@ -13,43 +13,43 @@ class App extends Component {
     this.timer = null;
     this.state = {
       isFetching: false,
-      quotes: ['1']};
+      Client: ['1']};
   }
   render() {
-    const title = 'Quotes for ya!'
+    const title = 'Add clients'
     return (
       <div className='App'>
         <h2 className='App-title'>{title}</h2>
-        <p>{this.state.isFetching ? 'Fetching quotes...' : ''}</p>
-        <QuoteList quotes={this.state.quotes} />
-        <AddQuoteForm quote_service_url={QUOTE_SERVICE_URL}/>
+        <p>{this.state.isFetching ? 'Add new clients' : ''}</p>
+        <ClientList clients={this.state.clients} />
+        <AddClientForm quote_service_url={CLIENT_SERVICE_URL}/>
       </div>
     );
   }
 
   componentDidMount() {
-    this.fetchQuotes()
-    this.timer = setInterval(() => this.fetchQuotes(), 5000);
+    this.fetchClients();
+    this.timer = setInterval(() => this.fetchClients(), 5000);
   }
 
   componentWillUnmount() {
     this.timer = null;
   }
 
-  fetchQuotes = () => {
+  fetchClients = () => {
     this.setState({...this.state, isFetching: true})
-    axios.get(QUOTE_SERVICE_URL)
+    axios.get(CLIENT_SERVICE_URL)
       .then(response => {
-        this.setState({quotes: response.data, isFetching: false})
+        this.setState({clients: response.data, isFetching: false})
       })
       .catch(e => console.log(e));
   }
 
-  fetchQuotesWithFetch = () => {
+  fetchClientsWithFetch = () => {
     this.setState({...this.state, isFetching: true})
-    fetch(QUOTE_SERVICE_URL)
+    fetch(CLIENT_SERVICE_URL)
       .then(response => response.json())
-      .then(result => this.setState({quotes: result, isFetching: false}))
+      .then(result => this.setState({clients: result, isFetching: false}))
       .catch(e => console.log(e));
   }
 }
