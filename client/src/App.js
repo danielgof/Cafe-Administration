@@ -5,7 +5,7 @@ import axios from 'axios'
 import './App.css';
 
 
-const QUOTE_SERVICE_URL = 'http://localhost:8000/quotes'
+const QUOTE_SERVICE_URL = 'http://localhost:8080/api/v1/client'
 
 class App extends Component {
   constructor(props) {
