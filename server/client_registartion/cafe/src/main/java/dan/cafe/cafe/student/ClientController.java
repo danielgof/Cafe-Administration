@@ -16,10 +16,12 @@ public class ClientController
         this.clientService = clientService;
     }
 
+
     @GetMapping
     public List<Client> getClinets() {
         return clientService.getClients();
     }
+
 
     @PostMapping
     public void registerNewCLient(@RequestBody Client student) {
