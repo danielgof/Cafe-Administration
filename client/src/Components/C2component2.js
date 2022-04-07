@@ -1,51 +1,30 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect} from 'react'
+import axios from 'axios'
 
-export default class C2component2 extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            error: null,
-            isLoaded: false,
-            items: []
-        };
-    }
+function Datafetching() {
+    const [posts, setPosts] = useState([])
 
-    componentDidMount() {
-        fetch("http://127.0.0.1:5000/clients")
-        .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({
-                    isLoaded: true,
-                    items: result.clients
-                });
-            },
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
+    useEffect(() => { 
+       axios
+       .get('http://127.0.0.1:3030/posts') 
+       .then(res => {
+           console.log(res)
+           setPosts(res.data)
+       })
+       .catch(err => {
+           console.log(err)
+       })
+    }, [])
 
-            }
-        )
-    }
-
-    render() {
-        const {error, isLoaded, items } = this.state;
-        if (error) {
-            return <p> Error: {error.message}</p>;
-        } else if (!isLoaded) {
-            return <p> Loading... </p>
-        } else {
-            return ( 
-                <ul>
-                    {items.map(item => (
-                        <li key={item.Danzel}>
-                            {item.Danzel}
-                        </li>
-                    ))};
-                </ul>
-            )
-        }
-    }
+    return (
+        <div>
+            <ul>
+                {posts.map(posts => (
+                    <li key={posts.id}>{posts.body}</li>
+                ))}
+            </ul>
+        </div>
+    )
 }
+
+export default Datafetching
