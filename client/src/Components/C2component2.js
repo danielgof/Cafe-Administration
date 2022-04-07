@@ -6,7 +6,7 @@ function Datafetching() {
 
     useEffect(() => { 
        axios
-       .get('http://127.0.0.1:3030/posts') 
+       .get('http://127.0.0.1:5000/clients') 
        .then(res => {
            console.log(res)
            setPosts(res.data)
