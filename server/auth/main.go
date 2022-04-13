@@ -12,5 +12,6 @@ func main() {
 }
 
 func helloHandleFunc(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Welcome to WEB")
+	fmt.Fprintf(w, "Welcome to WEB\n" +
+					"This is gonna be auth page")
 }
