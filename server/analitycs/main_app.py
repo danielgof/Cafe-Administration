@@ -1,19 +1,23 @@
+import db
 from flask import Flask, jsonify
-from req import Request
-from collections import OrderedDict
+
+
+Database = db.Database
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return "this works"
 
 
 @app.route("/clients", methods = ['GET','POST'])
-def client_info():
-    result = Request.get_data()
-    new_dict = {item['name']:item for item in result}
-    df = dict(OrderedDict([("clients", new_dict)]))
-    return jsonify(df)
+def get_clients():
+    con = Database.connect()
+    DBComments = Database.select(con)
+    return jsonify({"clients": DBComments})
 
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port = 3444, debug = True)

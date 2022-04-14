@@ -1,8 +1,3 @@
-from json import dumps
-import psycopg2
-
-
-
 
 import psycopg2
 from psycopg2 import Error
@@ -19,49 +14,73 @@ class Database:
                                     password=auth.passwd,  
                                     host="127.0.0.1",
                                     port="5432",
-                                    database="purchases")
+                                    database="client")
             print("conect to db successfully")
             return connection
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
 
 
-    """создание таблицы"""
-    def create(connection):
-        try:
-            cursor = connection.cursor()
-            """query create table"""
-            create_table_query = """CREATE TABLE IF NOT EXISTS public.purchases
-                                    (
-                                        id SERIAL,
-                                        price real,
-                                        name text,
-                                        company_name text
-                                    )
+    # """создание таблицы"""
+    # def create(connection):
+    #     try:
+    #         cursor = connection.cursor()
+    #         """query create table"""
+    #         create_table_query = """CREATE TABLE IF NOT EXISTS public.purchases
+    #                                 (
+    #                                     id SERIAL,
+    #                                     price real,
+    #                                     name text,
+    #                                     company_name text
+    #                                 )
 
-                                    TABLESPACE pg_default;
+    #                                 TABLESPACE pg_default;
 
-                                    ALTER TABLE IF EXISTS public.purchases
-                                        OWNER to postgres;"""
-            # Выполнение команды: это создает новую таблицу
-            cursor.execute(create_table_query)
-            connection.commit()
-            print("Таблица успешно создана в PostgreSQL")
-        except (Exception, Error) as error:
-            print("Ошибка при работе с PostgreSQL", error)
+    #                                 ALTER TABLE IF EXISTS public.purchases
+    #                                     OWNER to postgres;"""
+    #         # Выполнение команды: это создает новую таблицу
+    #         cursor.execute(create_table_query)
+    #         connection.commit()
+    #         print("Таблица успешно создана в PostgreSQL")
+    #     except (Exception, Error) as error:
+    #         print("Ошибка при работе с PostgreSQL", error)
 
-    """выбор всех закупок"""
+    """выбор всех клиентов"""
     def select(connection):
         try:
+            # d = {'id':'', 'dob': '', 'lastname':'', 'name': '', 'phonenumber': ''}
+            # id, dob, lastname, name, phonenumber = [], [], [], [], [] 
+            clients = []
             cursor = connection.cursor()
-            cursor.execute("SELECT * from purchases")
+            cursor.execute("SELECT * from client")
             record = cursor.fetchall()
+            # for rec in record:
+            #   print(f"{rec['id']} {rec['dob']} {rec['email']} {rec['lastaname']} {rec['name']} {rec['phonenumber']}")
+            for r in range(len(record)):
+              d = {'id':'', 'dob': '', 'lastname':'', 'name': '', 'phonenumber': ''}
+              d["id"] = record[r][0]
+              d["dob"] = record[r][1]
+              d["lastname"] = record[r][2]
+              d["name"] = record[r][3]
+              d["phonenumber"] = record[r][4]
+              clients.append(d)
+            #   id.append(record[r][0])
+            #   dob.append(record[r][1])
+            #   lastname.append(record[r][2])
+            #   name.append(record[r][3])
+            #   phonenumber.append(record[r][4])
+            # d["id"] = id
+            # d["dob"] = dob
+            # d["lastname"] = lastname
+            # d["name"] = name
+            # d["phonenumber"] = phonenumber
             print("Результат", record)
-            return record
+            print("Dict", clients)
+            return clients
         except (Exception, Error) as error:
             print("Ошибка при работе с PostgreSQL", error)
 
-    """добавление закупки в таблицу"""
+    """добавление клиентов в таблицу"""
     def insert(connection, price, name, product_name):
         try:
             cursor = connection.cursor()
@@ -88,53 +107,4 @@ class Database:
 
 
 
-
-class Database_Clients:
-
-
-  def __init__(self, database_name, user_name, password_name, host_name, port_name):
-    self.connection = self.createConnection(database_name, user_name, password_name, host_name, port_name)
-    
-
-  def createConnection(self, database_name, user_name, password_name, host_name, port_name):
-
-    connection = None
-    try:
-      connection = psycopg2.connect(
-      database=database_name, 
-      user=user_name, 
-      password=password_name, 
-      host=host_name, 
-      port=port_name
-      )
-      self.cursor = self.connection.cursor()
-      self.cursor.execute("SELECT * FROM client")
-      print(self.cursor.fetchall())
-      print("Connection created successfully")
-    except psycopg2.OperationalError as e:
-      print('Unable to connect!\n{0}').format(e)
-
-
-  def get_data(self):
-    print("Query")
-    # cursor = self.connection.cursor()
-    # cursor.execute("SELECT * FROM client")
-    # print(cursor.fetchall())
-
-
-
-
-#   def __init__(self, database, user, password, host, port):
-#     self.connection = self.createConnection(database, user, password, host, port)
-
-
-#
-#     except psycopg2.OperationalError as e:
-#       print('Unable to connect!\n{0}').format(e)
-
-
-#   def get_data(self):
-
-#     cursor = self.con.cursor()
-#     return self.ExecuteReadQuery(cursor.execute("SELECT * FROM orders"))
 

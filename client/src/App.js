@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 // import Fcomponent from './Fcomponent';
 // import Ccomponent from './Ccomponent'
-// import C2component2 from './C2component2';
+import Datafetching from '.Components/Datafetching';
 // import Menu from './Menu';
 
 
@@ -11,8 +11,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Ccomponent />
-        <C2component2 /> */}
+      <Datafetching />
         <p>
           CAFE_PO client
         </p>
