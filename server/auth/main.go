@@ -1,6 +1,8 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import ("github.com/gofiber/fiber/v2"
+        "gorm.io/driver/postgresql"
+        )
 
 func main() {
     app := fiber.New()
