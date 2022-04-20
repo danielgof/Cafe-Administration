@@ -21,6 +21,7 @@ function Datafetching() {
             <ul>
                 {posts.map(posts => (
                     <li key={posts.id}>{posts.name}</li>
+                    // <li key={posts.id}>{posts.name}</li>
                 ))}
             </ul>
         </div>

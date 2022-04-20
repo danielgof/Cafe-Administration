@@ -3,13 +3,9 @@ package dan.cafe.cafe.student;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import static org.apache.logging.log4j.message.MapMessage.MapFormat.JSON;
 
 @Configuration
 public class ClientConfig

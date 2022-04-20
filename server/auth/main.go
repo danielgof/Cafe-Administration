@@ -3,6 +3,7 @@ package main
 import (
     "./database"
     "./routes"
+    "github.com/gofiber/fiber/v2"
         )
 
 func main() {

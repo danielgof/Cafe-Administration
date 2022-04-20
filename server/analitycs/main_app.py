@@ -1,21 +1,29 @@
 import db
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 
 Database = db.Database
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return "this works"
 
 
+@app.route("/test", methods=['GET', 'POST'])
+def test():
+    data = [{    "dob": "Sun, 07 Feb 1999 00:00:00 GMT", "id": 1, "lastname": "123dz@gmail.com", "name": "Green", "phonenumber": "Danzel"}, {"dob": "Wed, 07 Feb 1996 00:00:00 GMT", "id": 2, "lastname": "jr@gmail.com", "name": "Book", "phonenumber": "Jared"}]
+    return jsonify(data)
+
 @app.route("/clients", methods = ['GET','POST'])
 def get_clients():
     con = Database.connect()
-    DBComments = Database.select(con)
-    return jsonify({"clients": DBComments})
+    DBClients = Database.select(con)
+    return jsonify(DBClients)
 
 
 
