@@ -27,9 +27,21 @@ public class ClientConfig
                     "jr@gmail.com",
                     LocalDate.of(1996, 02, 7),
                     "8273446276");
+            Client fred = new Client(
+                    "Fred",
+                    "Geller",
+                    "gel_cl@gail.com",
+                    LocalDate.of(1978, 02, 7),
+                    "0892329832");
+            Client joui = new Client(
+                    "Joui",
+                    "Tribianny",
+                    "jt_star@gmail.com",
+                    LocalDate.of(1986, 02, 19),
+                    "8279046276");
 
             repository.saveAll(
-                    List.of(danzel, jared)
+                    List.of(danzel, jared, fred, joui)
             );
         };
     }
