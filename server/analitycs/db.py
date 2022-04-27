@@ -47,14 +47,10 @@ class Database:
     """выбор всех клиентов"""
     def select(connection):
         try:
-            # d = {'id':'', 'dob': '', 'lastname':'', 'name': '', 'phonenumber': ''}
-            # id, dob, lastname, name, phonenumber = [], [], [], [], [] 
             clients = []
             cursor = connection.cursor()
             cursor.execute("SELECT * from client")
             record = cursor.fetchall()
-            # for rec in record:
-            #   print(f"{rec['id']} {rec['dob']} {rec['email']} {rec['lastaname']} {rec['name']} {rec['phonenumber']}")
             for r in range(len(record)):
               d = {'id':'', 'dob': '', 'lastname':'', 'name': '', 'phonenumber': ''}
               d["id"] = record[r][0]
@@ -63,16 +59,6 @@ class Database:
               d["name"] = record[r][3]
               d["phonenumber"] = record[r][4]
               clients.append(d)
-            #   id.append(record[r][0])
-            #   dob.append(record[r][1])
-            #   lastname.append(record[r][2])
-            #   name.append(record[r][3])
-            #   phonenumber.append(record[r][4])
-            # d["id"] = id
-            # d["dob"] = dob
-            # d["lastname"] = lastname
-            # d["name"] = name
-            # d["phonenumber"] = phonenumber
             print("Результат", record)
             print("Dict", clients)
             return clients
