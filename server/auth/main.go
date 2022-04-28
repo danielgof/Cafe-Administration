@@ -1,17 +1,17 @@
 package main
 
 import (
-    "./database"
-    "./routes"
-    "github.com/gofiber/fiber/v2"
-        )
+	"./database"
+	"./routes"
+	"github.com/gofiber/fiber/v2"
+)
 
 func main() {
-    database.Connect()
+	database.Connect()
 
-    app := fiber.New()
+	app := fiber.New()
 
-    routes.Setup(app)
+	routes.Setup(app)
 
-    app.Listen(":8000")
+	app.Listen(":8000")
 }

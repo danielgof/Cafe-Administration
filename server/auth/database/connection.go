@@ -1,15 +1,14 @@
 package database
 
 import (
-  "gorm.io/driver/postgresql"
-	"gorm.io/gorm"
-)
-
+    "gorm.io/gorm"
+    "gorm.io/driver/postgres"
+  )
+  
+  
 func Connect()  {
-    connection, err := gorm.Open(postgres.New(postgres.Config{
-        DSN: "user=postgersql password=admin dbname=cafe_po_auth port=5342 sslmode=disable TimeZone=Europe",
-        PreferSimpleProtocol: true, // disables implicit prepared statement usage
-      }), &gorm.Config{})
+    dsn := "host=localhost user=postgersql password=admin dbname=cafe_po_auth port=5432 sslmode=disable"
+    _, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
     if err != nil {
         panic("could not connect to db")
