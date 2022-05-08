@@ -1,6 +1,8 @@
 import React from 'react'
 import JsonData from './data.json'
-function JsonDataDisplay(){
+
+
+function Clients_Table(){
 	const DisplayData=JsonData.map(
 		(info)=>{
 			return(
@@ -37,4 +39,4 @@ function JsonDataDisplay(){
 	)
 }
 
-export default JsonDataDisplay;
+export default Clients_Table;
