@@ -1,1 +1,10 @@
-Pet Project "Rainbow Cafe Software"
+# Pet Project "Rainbow Cafe Software"
+
+
+### client
+- Install nodejs
+- In cmd cd to client folder
+``` 
+    npm install 
+```
+____
