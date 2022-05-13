@@ -1,4 +1,4 @@
-package com.example.auth_spring.registrstion;
+package com.example.auth_spring.registration;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
