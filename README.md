@@ -7,4 +7,7 @@
 ``` 
     npm install 
 ```
+``` 
+    npm start 
+```
 ____
