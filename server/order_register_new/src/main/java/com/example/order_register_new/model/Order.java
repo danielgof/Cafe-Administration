@@ -11,21 +11,21 @@ public class Order
 {
     @Id
     private String id;
-    @Field(adress = "adress")
+//    @Field(adress = "adress")
     private String adress;
     @Field(name = "name")
     private String name;
-    @Field(lastname = "lastname")
+//    @Field(lastname = "lastname")
     private String lastname;
-    @Field(email = "email")
+//    @Field(email = "email")
     private String email;
-    @Field(phonenumber = "phonenumber")
+//    @Field(phonenumber = "phonenumber")
     private String phonenumber;
-    @Field(dob = "dob")
+//    @Field(dob = "dob")
     private Date dob;
-    @Field(order = "order")
+//    @Field(order = "order")
     private String order;
-    @Field(sum = "sum")
+//    @Field(sum = "sum")
     private float sum;
 
     public String getId() {

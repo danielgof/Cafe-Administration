@@ -1,34 +1,51 @@
 package com.example.order_register_new.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.order_register_new.model.Order;
+import com.example.order_register_new.service.OrderService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/order")
 public class OrderController
 {
+    private final OrderService orderService;
+
+    public OrderController(OrderService orderService)
+    {
+        this.orderService = orderService;
+    }
+
+    @PostMapping
     public void addOrder()
     {
 
     }
 
-    public void updateOrder()
+    @PutMapping
+    public ResponseEntity<Object> updateOrder(Order order)
     {
-
+        orderService.updateOrder(order);
+        return ResponseEntity.ok().build();
     }
 
-    public void getAllOrders()
+    @GetMapping
+    public ResponseEntity getAllOrders()
     {
-
+        return ResponseEntity.ok(orderService.getAllOrders());
     }
 
-    public void getOrderById()
+    @GetMapping("/{Id}")
+    public ResponseEntity<Order> getOrderById(@PathVariable String Id)
     {
-
+        return ResponseEntity.ok(orderService.getOrderById(Id));
     }
 
-    public void deleteOrder()
+    @DeleteMapping("/{Id}")
+    public ResponseEntity<Object> deleteOrder(@PathVariable String Id)
     {
-
+        orderService.deleteOrder(Id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }
