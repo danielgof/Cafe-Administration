@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import axios from 'axios';
 
 
 export default class Delivery extends Component {
+  
   render() {
     return (
       <div>
-        <h2>Delivery of "Daniel's Cafe"</h2>
-      </div>
+      <h6> </h6>
+    </div>
     )
   }
 }

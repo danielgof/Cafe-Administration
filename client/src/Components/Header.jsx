@@ -14,6 +14,7 @@ import TableResevation from '../Pages/TableResevation';
 import DataAnalisys from '../Pages/DataAnalisys';
 import Delivery from '../Pages/Delivery';
 import ClientRegistration from '../Pages/ClientRegistration';
+import DishDection from '../Pages/DishDection';
 
 
 export default class Header extends Component {
@@ -40,7 +41,8 @@ export default class Header extends Component {
               <Nav.Link href="/tableresevation">TableResevation</Nav.Link>
               <Nav.Link href="/data_analisys">DataAnalisys</Nav.Link>
               <Nav.Link href="/delivery">Delivery</Nav.Link>
-              <Nav.Link href="/clientregistration">ClientRegistration</Nav.Link>        
+              <Nav.Link href="/clientregistration">ClientRegistration</Nav.Link>
+              <Nav.Link href="/dishdection">DishDection</Nav.Link>        
             </Nav>
             {/* <Form inline>
               <FormControl 
@@ -63,6 +65,7 @@ export default class Header extends Component {
           <Route exact path='/data_analisys' element={<DataAnalisys />}/>
           <Route exact path='/delivery' element={<Delivery />}/>
           <Route exact path='/clientregistration' element={<ClientRegistration />}/>
+          <Route exact path='/dishdection' element={<DishDection />}/>
         </Routes>
       </Router>
       </>
