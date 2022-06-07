@@ -18,9 +18,10 @@ public class OrderController
     }
 
     @PostMapping
-    public void addOrder()
+    public ResponseEntity<Object> addOrder(@RequestBody Order order)
     {
-
+        orderService.addOrder(order);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @PutMapping

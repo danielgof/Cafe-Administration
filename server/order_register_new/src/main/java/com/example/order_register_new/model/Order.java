@@ -6,27 +6,33 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Date;
 
+
 @Document("order")
 public class Order
 {
     @Id
     private String id;
-//    @Field(adress = "adress")
+
     private String adress;
-    @Field(name = "name")
     private String name;
-//    @Field(lastname = "lastname")
     private String lastname;
-//    @Field(email = "email")
     private String email;
-//    @Field(phonenumber = "phonenumber")
     private String phonenumber;
-//    @Field(dob = "dob")
     private Date dob;
-//    @Field(order = "order")
     private String order;
-//    @Field(sum = "sum")
     private float sum;
+
+    public Order(String id, String adress, String name, String lastname, String email, String phonenumber, Date dob, String order, float sum) {
+        this.id = id;
+        this.adress = adress;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.phonenumber = phonenumber;
+        this.dob = dob;
+        this.order = order;
+        this.sum = sum;
+    }
 
     public String getId() {
         return id;
@@ -99,4 +105,5 @@ public class Order
     public void setSum(float sum) {
         this.sum = sum;
     }
+
 }

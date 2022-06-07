@@ -13,4 +13,15 @@ function App() {
   );
 }
 
+// function App() {
+//   return (
+//       <BrowserRouter>
+//         <Router>
+//           <Route exact path="/" component={LoginPage}/>
+//           <Route exact path="/dashboard" component={Dashboard}/>
+//         </Router>
+//       </BrowserRouter>
+//   );
+// }
+
 export default App;
