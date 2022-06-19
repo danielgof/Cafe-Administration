@@ -3,12 +3,12 @@ package cafe.cafe.login.user;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import java.time.LocalDate;
+
 import java.util.List;
 
 
 @Configuration
-public class ClientConfig
+public class UserConfig
 {
     @Bean
     CommandLineRunner commandLineRunner(ClientRepository repository)

@@ -19,13 +19,13 @@ public class ClientService
         this.clientRepository = ClientRepository;
     }
 
-    public List<Client> getClients()
+    public List<Client> getUsers()
     {
         return clientRepository.findAll();
     }
 
-    public void addNewClient(Client student){
-
+    public void addNewClient(Client student)
+    {
         Optional<Client> studentOptional = clientRepository
                 .findStudentByLastname(student.getPassword());
         if (studentOptional.isPresent())

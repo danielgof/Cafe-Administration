@@ -18,8 +18,8 @@ public class UserController
 
 
     @GetMapping
-    public List<Client> getClinets() {
-        return userService.getClients();
+    public List<Client> getUsers() {
+        return userService.getUsers();
     }
 
 

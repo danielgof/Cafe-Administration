@@ -24,15 +24,15 @@ public class ClientService
         return clientRepository.findAll();
     }
 
-    public void addNewClient(Client student){
+    public void addNewClient(Client user){
 
         Optional<Client> studentOptional = clientRepository
-                .findStudentByEmail(student.getEmail());
+                .findStudentByEmail(user.getEmail());
         if (studentOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
         }
-        clientRepository.save(student);
+        clientRepository.save(user);
     }
 
     public void deleteClient(Long studentId) {
