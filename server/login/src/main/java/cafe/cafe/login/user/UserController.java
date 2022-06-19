@@ -24,20 +24,20 @@ public class UserController
 
 
     @PostMapping
-    public void registerNewCLient(@RequestBody Client student) {
-        userService.addNewClient(student);
+    public void registerNewUser(@RequestBody Client user) {
+        userService.addNewUser(user);
     }
 
-    @DeleteMapping(path = "{clientId}")
-    public void deleteClient(@PathVariable("clientId") Long studentId) {
-        userService.deleteClient(studentId);
+    @DeleteMapping(path = "{userId}")
+    public void deleteUser(@PathVariable("userId") Long userId) {
+        userService.deleteUser(userId);
     }
 
-    @PutMapping(path = "{clientId}")
-    public void updateStudent(
-            @PathVariable("clientId") Long studentId,
-            @RequestParam(required = false) String name)
+    @PutMapping(path = "{userId}")
+    public void updateUser(
+            @PathVariable("userId") Long userId,
+            @RequestParam(required = false) String Login)
     {
-        userService.updateClient(studentId, name);
+        userService.updateUser(userId, Login);
     }
 }

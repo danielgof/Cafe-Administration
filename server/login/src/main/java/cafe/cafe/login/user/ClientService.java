@@ -24,47 +24,46 @@ public class ClientService
         return clientRepository.findAll();
     }
 
-    public void addNewClient(Client student)
+    public void addNewUser(Client user)
     {
-        Optional<Client> studentOptional = clientRepository
-                .findStudentByLastname(student.getPassword());
-        if (studentOptional.isPresent())
+        Optional<Client> userOptional = clientRepository.findUserByLogin(user.getPassword());
+        if (userOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
         }
-        clientRepository.save(student);
+        clientRepository.save(user);
     }
 
-    public void deleteClient(Long studentId) {
+    public void deleteUser(Long userId) {
 
-        boolean exists = clientRepository.existsById(studentId);
+        boolean exists = clientRepository.existsById(userId);
         if (!exists)
         {
             throw new IllegalStateException("student with id " +
-                    studentId + " does not exists");
+                    userId + " does not exists");
         }
-        clientRepository.deleteById(studentId);
+        clientRepository.deleteById(userId);
     }
 
     @Transactional
-    public void updateClient(Long studentId, String name) {
-        Client student = clientRepository.findById(studentId)
-                .orElseThrow(() -> new IllegalStateException("student with id " + studentId + " does not exists"));
+    public void updateUser(Long userId, String Login) {
+        Client user = clientRepository.findById(userId)
+                .orElseThrow(() -> new IllegalStateException("user with id " + userId + " does not exists"));
 
-        if (name != null && name.length() > 0 && !Objects.equals(student.getLogin(), name))
+        if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
         {
-            student.setLogin(name);
+            user.setLogin(Login);
         }
 
-        if (name != null && name.length() > 0 && !Objects.equals(student.getLogin(), name))
+        if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
         {
-            Optional<Client> studentOptional = clientRepository
-                    .findStudentByLastname(student.getPassword());
-            if (studentOptional.isPresent())
+            Optional<Client> userOptional = clientRepository
+                    .findUserByLogin(user.getLogin());
+            if (userOptional.isPresent())
             {
-                throw new IllegalStateException("email taken");
+                throw new IllegalStateException("login taken");
             }
-            student.setPassword(name);
+            user.setPassword(Login);
         }
     }
 }
