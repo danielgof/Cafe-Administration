@@ -10,44 +10,44 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class ClientService
+public class UserService
 {
-    private final ClientRepository clientRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public ClientService(ClientRepository ClientRepository) {
-        this.clientRepository = ClientRepository;
+    public UserService(UserRepository UserRepository) {
+        this.userRepository = UserRepository;
     }
 
     public List<Client> getUsers()
     {
-        return clientRepository.findAll();
+        return userRepository.findAll();
     }
 
     public void addNewUser(Client user)
     {
-        Optional<Client> userOptional = clientRepository.findUserByLogin(user.getPassword());
+        Optional<Client> userOptional = userRepository.findUserByLogin(user.getPassword());
         if (userOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
         }
-        clientRepository.save(user);
+        userRepository.save(user);
     }
 
     public void deleteUser(Long userId) {
 
-        boolean exists = clientRepository.existsById(userId);
+        boolean exists = userRepository.existsById(userId);
         if (!exists)
         {
-            throw new IllegalStateException("student with id " +
+            throw new IllegalStateException("user with id " +
                     userId + " does not exists");
         }
-        clientRepository.deleteById(userId);
+        userRepository.deleteById(userId);
     }
 
     @Transactional
     public void updateUser(Long userId, String Login) {
-        Client user = clientRepository.findById(userId)
+        Client user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalStateException("user with id " + userId + " does not exists"));
 
         if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
@@ -57,7 +57,7 @@ public class ClientService
 
         if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
         {
-            Optional<Client> userOptional = clientRepository
+            Optional<Client> userOptional = userRepository
                     .findUserByLogin(user.getLogin());
             if (userOptional.isPresent())
             {

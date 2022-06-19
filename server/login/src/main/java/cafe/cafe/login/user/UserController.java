@@ -9,11 +9,11 @@ import java.util.List;
 @RequestMapping(path = "login")
 public class UserController
 {
-    private final ClientService userService;
+    private final UserService userService;
 
     @Autowired
-    public UserController(ClientService clientService) {
-        this.userService = clientService;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
 
