@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 
-export default class Contacts extends Component {
+export default class ClientRegistration extends Component {
   render() {
     return (
       <div>
-        <h2>Contacts of "Daniel's Cafe"</h2>
+        <h2 align="center">ClientRegistration</h2>
       </div>
     )
   }
