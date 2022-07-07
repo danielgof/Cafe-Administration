@@ -19,14 +19,14 @@ public class UserService
         this.userRepository = UserRepository;
     }
 
-    public List<Client> getUsers()
+    public List<Users> getUsers()
     {
         return userRepository.findAll();
     }
 
-    public void addNewUser(Client user)
+    public void addNewUser(Users user)
     {
-        Optional<Client> userOptional = userRepository.findUserByLogin(user.getPassword());
+        Optional<Users> userOptional = userRepository.findUserByLogin(user.getPassword());
         if (userOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
@@ -47,7 +47,7 @@ public class UserService
 
     @Transactional
     public void updateUser(Long userId, String Login) {
-        Client user = userRepository.findById(userId)
+        Users user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalStateException("user with id " + userId + " does not exists"));
 
         if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
@@ -57,7 +57,7 @@ public class UserService
 
         if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
         {
-            Optional<Client> userOptional = userRepository
+            Optional<Users> userOptional = userRepository
                     .findUserByLogin(user.getLogin());
             if (userOptional.isPresent())
             {

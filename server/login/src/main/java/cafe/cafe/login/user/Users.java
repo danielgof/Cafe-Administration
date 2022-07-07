@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Client
+public class Users
 {
     @Id
     @SequenceGenerator(
@@ -19,18 +19,21 @@ public class Client
     private Long id;
     private String login;
     private String password;
+    private String email;
 
-    public Client() {    }
+    public Users() {    }
 
-    public Client(Long id, String login, String password) {
+    public Users(Long id, String login, String password, String email) {
         this.id = id;
         this.login = login;
         this.password = password;
+        this.email = email;
     }
 
-    public Client(String login, String password) {
+    public Users(String login, String password, String email) {
         this.login = login;
         this.password = password;
+        this.email = email;
     }
 
     public Long getId() {
@@ -61,9 +64,10 @@ public class Client
     @Override
     public String toString()
     {
-        return "Student{" +
+        return "User{" +
                 "id=" + id +
                 ", name='" + login + '\'' +
-                ", lastname='" + password + '\'';
+                ", lastname='" + password +
+                ", email='" + email + '\'';
     }
 }

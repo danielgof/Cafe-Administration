@@ -15,18 +15,22 @@ public class UserConfig
     {
         return args ->
         {
-            Client danzel = new Client(
+            Users danzel = new Users(
                         "Danzel",
-                        "Green");
-            Client jared = new Client(
+                        "Green",
+                        "ddd@kkkkl");
+            Users jared = new Users(
                     "Jared",
-                    "Book");
-            Client fred = new Client(
+                    "Book",
+                    "kkkfk@llll");
+            Users fred = new Users(
                     "Fred",
-                    "Geller");
-            Client joui = new Client(
+                    "Geller",
+                    "ririhg@lrjjfr");
+            Users joui = new Users(
                     "Joui",
-                    "Tribianny");
+                    "Tribianny",
+                    "fjjdhdh@lfkjf");
 
             repository.saveAll(
                     List.of(danzel, jared, fred, joui)
