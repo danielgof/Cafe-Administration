@@ -9,30 +9,21 @@ import ClientRegistration from './Pages/ClientRegistration';
 import OrderRegistration from './Pages/OrderRegistration';
 
 
-
 function App() {
   return (
-    <main className="App">
-      <Login />
-    </main>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route exact path="/" element={<StartPage />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/client_reg" element={<ClientRegistration />} />
+          <Route exact path="/order_reg" element={<OrderRegistration />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
-
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <div>
-//         <Routes>
-//           <Route exact path="/" element={<StartPage />} />
-//           <Route exact path="/login" element={<Login />} />
-//           <Route exact path="/home" element={<Home />} />
-//           <Route exact path="/client_reg" element={<ClientRegistration />} />
-//           <Route exact path="/order_reg" element={<OrderRegistration />} />
-//         </Routes>
-//       </div>
-//     </BrowserRouter>
-//   );
-// }
 
 
 export default App;
