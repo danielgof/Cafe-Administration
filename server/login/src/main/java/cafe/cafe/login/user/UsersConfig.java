@@ -8,28 +8,28 @@ import java.util.List;
 
 
 @Configuration
-public class UserConfig
+public class UsersConfig
 {
     @Bean
-    CommandLineRunner commandLineRunner(UserRepository repository)
+    CommandLineRunner commandLineRunner(UsersRepository repository)
     {
         return args ->
         {
             Users danzel = new Users(
                         "Danzel",
-                        "Green",
+                        "1111",
                         "ddd@kkkkl");
             Users jared = new Users(
                     "Jared",
-                    "Book",
+                    "qqq",
                     "kkkfk@llll");
             Users fred = new Users(
                     "Fred",
-                    "Geller",
+                    "3333",
                     "ririhg@lrjjfr");
             Users joui = new Users(
                     "Joui",
-                    "Tribianny",
+                    "fffff",
                     "fjjdhdh@lfkjf");
 
             repository.saveAll(

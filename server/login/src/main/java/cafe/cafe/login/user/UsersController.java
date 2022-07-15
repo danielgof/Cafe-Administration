@@ -4,26 +4,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping(path = "login")
-public class UserController
+@RequestMapping()
+public class UsersController
 {
     private final UserService userService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UsersController(UserService userService) {
         this.userService = userService;
     }
-
 
     @GetMapping
     public List<Users> getUsers() {
         return userService.getUsers();
     }
 
+//    @PostMapping("/login")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Map<String, String> checkData(@RequestBody Map<String, Object> data)
+    {
+        String Login = (String) data.get("login");
+        String Password = (String) data.get("login");
+        return userService.Login(Login, Password);
+    }
 
-    @PostMapping
+    @PostMapping("/register")
     public void registerNewUser(@RequestBody Users user) {
         userService.addNewUser(user);
     }

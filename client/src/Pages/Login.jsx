@@ -4,7 +4,7 @@ const Login = () => {
     return (
 
       <form id="settings" class="settings">
-        <h2 class="sname" align="center"> Настройки сервера </h2>
+        <h2 class="sname" align="center">  </h2>
         <div class="login">
             <label>
                 <span>login</span>

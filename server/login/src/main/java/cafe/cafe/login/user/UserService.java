@@ -5,17 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class UserService
 {
-    private final UserRepository userRepository;
+    private final UsersRepository userRepository;
 
     @Autowired
-    public UserService(UserRepository UserRepository) {
+    public UserService(UsersRepository UserRepository) {
         this.userRepository = UserRepository;
     }
 
@@ -26,7 +24,7 @@ public class UserService
 
     public void addNewUser(Users user)
     {
-        Optional<Users> userOptional = userRepository.findUserByLogin(user.getPassword());
+        Optional<Users> userOptional = userRepository.findUsersById(user.getId());
         if (userOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
@@ -45,6 +43,23 @@ public class UserService
         userRepository.deleteById(userId);
     }
 
+    public Map<String, String> Login(String Login, String Password) {
+        String existsLogin = userRepository.findUsersByLogin(Login);
+        String existsPass = userRepository.findUsersByPassword(Password);
+        Map<String, String> data;
+        if (Objects.equals(existsLogin, Login) && Objects.equals(existsPass, Password))
+        {
+            data = new HashMap();
+            data.put("status", "200");
+            return data;
+        }
+
+        data = new HashMap();
+        data.put("status", "400");
+        return data;
+
+    }
+
     @Transactional
     public void updateUser(Long userId, String Login) {
         Users user = userRepository.findById(userId)
@@ -58,7 +73,7 @@ public class UserService
         if (Login != null && Login.length() > 0 && !Objects.equals(user.getLogin(), Login))
         {
             Optional<Users> userOptional = userRepository
-                    .findUserByLogin(user.getLogin());
+                    .findUsersById(user.getId());
             if (userOptional.isPresent())
             {
                 throw new IllegalStateException("login taken");
