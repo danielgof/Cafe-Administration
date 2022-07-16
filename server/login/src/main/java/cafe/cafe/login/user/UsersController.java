@@ -6,8 +6,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
-@RequestMapping()
+@RequestMapping
 public class UsersController
 {
     private final UserService userService;
@@ -22,18 +23,17 @@ public class UsersController
         return userService.getUsers();
     }
 
-//    @PostMapping("/login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Map<String, String> checkData(@RequestBody Map<String, Object> data)
     {
         String Login = (String) data.get("login");
-        String Password = (String) data.get("login");
+        String Password = (String) data.get("password");
         return userService.Login(Login, Password);
     }
 
     @PostMapping("/register")
     public void registerNewUser(@RequestBody Users user) {
-        userService.addNewUser(user);
+        userService.registerUser(user);
     }
 
     @DeleteMapping(path = "{userId}")

@@ -22,7 +22,7 @@ public class UserService
         return userRepository.findAll();
     }
 
-    public void addNewUser(Users user)
+    public Map<String, String> registerUser(Users user)
     {
         Optional<Users> userOptional = userRepository.findUsersById(user.getId());
         if (userOptional.isPresent())
@@ -30,6 +30,10 @@ public class UserService
             throw new IllegalStateException("email taken");
         }
         userRepository.save(user);
+        Map<String, String> data;
+        data = new HashMap();
+        data.put("status", "200");
+        return data;
     }
 
     public void deleteUser(Long userId) {
@@ -53,10 +57,10 @@ public class UserService
             data.put("status", "200");
             return data;
         }
-
-        data = new HashMap();
-        data.put("status", "400");
-        return data;
+        else
+            data = new HashMap();
+            data.put("status", "400");
+            return data;
 
     }
 
