@@ -60,25 +60,6 @@ if (form1)
   form1.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // fetch("http://localhost:8081/login", {
-    //   mode: 'cors',
-    //   credentials: 'include',
-    //   method: 'POST',
-    //   headers: headers,
-    //   body: JSON.stringify(data, null, 2)
-    // })
-    // .then((text)=>{
-    //   if (text["status"] === "200") {
-    //     console.log(text["status"])
-    //   }
-    //   if (text["status"] === "400") {
-    //     console.log(text["status"])
-    //   }
-    //   console.log("data: ", text);
-    // }).catch(e=>{
-    //   console.log(e);
-    // })
-
     axios.post("http://localhost:8081/login", {
       data: JSON.stringify(data, null, 2)
     })

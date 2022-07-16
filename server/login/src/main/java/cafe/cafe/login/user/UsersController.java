@@ -1,6 +1,8 @@
 package cafe.cafe.login.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,20 +26,28 @@ public class UsersController
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Map<String, String> checkData(@RequestBody Map<String, Object> data)
+    @ResponseBody
+    public ResponseEntity checkData(@RequestBody Map<String, Object> data)
     {
         String Login = (String) data.get("login");
         String Password = (String) data.get("password");
-        return userService.Login(Login, Password);
+        System.out.println(userService.Login(Login, Password));
+        if (!userService.Login(Login, Password)) return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        else return new ResponseEntity(HttpStatus.OK);
     }
 
     @PostMapping("/register")
-    public void registerNewUser(@RequestBody Users user) {
-        userService.registerUser(user);
+    @ResponseBody
+    public ResponseEntity registerNewUser(@RequestBody Users user)
+    {
+        if (!userService.registerUser(user)) return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        else return new ResponseEntity(HttpStatus.OK);
+
     }
 
     @DeleteMapping(path = "{userId}")
-    public void deleteUser(@PathVariable("userId") Long userId) {
+    public void deleteUser(@PathVariable("userId") Long userId)
+    {
         userService.deleteUser(userId);
     }
 

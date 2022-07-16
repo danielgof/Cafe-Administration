@@ -22,18 +22,17 @@ public class UserService
         return userRepository.findAll();
     }
 
-    public Map<String, String> registerUser(Users user)
+    public boolean registerUser(Users user)
     {
         Optional<Users> userOptional = userRepository.findUsersById(user.getId());
         if (userOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
         }
-        userRepository.save(user);
-        Map<String, String> data;
-        data = new HashMap();
-        data.put("status", "200");
-        return data;
+
+        else userRepository.save(user);
+        return true;
+
     }
 
     public void deleteUser(Long userId) {
@@ -47,20 +46,15 @@ public class UserService
         userRepository.deleteById(userId);
     }
 
-    public Map<String, String> Login(String Login, String Password) {
+    public boolean Login(String Login, String Password) {
         String existsLogin = userRepository.findUsersByLogin(Login);
         String existsPass = userRepository.findUsersByPassword(Password);
-        Map<String, String> data;
         if (Objects.equals(existsLogin, Login) && Objects.equals(existsPass, Password))
         {
-            data = new HashMap();
-            data.put("status", "200");
-            return data;
+            return true;
         }
         else
-            data = new HashMap();
-            data.put("status", "400");
-            return data;
+            return false;
 
     }
 
