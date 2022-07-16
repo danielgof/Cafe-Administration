@@ -7,6 +7,7 @@ import Home from './Pages/Home';
 import ClientRegistration from './Pages/ClientRegistration';
 import OrderRegistration from './Pages/OrderRegistration';
 import Registration from './Pages/Registration';
+import ProtectedRouts from './ProtectedRouts';
 
 
 function App() {
@@ -16,9 +17,11 @@ function App() {
         <Routes>
           <Route exact path="/" element={<StartPage />} />
           <Route exact path="/registration" element={<Registration />} />
-          <Route exact path="/home" element={<Home />} />
-          <Route exact path="/client_reg" element={<ClientRegistration />} />
-          <Route exact path="/order_reg" element={<OrderRegistration />} />
+          <Route element={<ProtectedRouts />}>
+            <Route exact path="/home" element={<Home />} />
+            <Route exact path="/client_reg" element={<ClientRegistration />} />
+            <Route exact path="/order_reg" element={<OrderRegistration />} />  
+          </Route>        
         </Routes>
       </div>
     </BrowserRouter>
