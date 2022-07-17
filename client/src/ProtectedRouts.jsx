@@ -4,7 +4,7 @@ import { Outlet, Navigate } from 'react-router';
 
 
 const useAuth = () => {
-    const user = { loggedIn: false };
+    const user = { loggedIn: true };
     return user && user.loggedIn;
 }
 

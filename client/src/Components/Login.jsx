@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Login.css"
 // import axios from 'axios'
 
 
 const Login = () => {
+  
+  const navigate = useNavigate();
+
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -33,7 +37,8 @@ const Login = () => {
       {
         setLogin("");
         setPassword("");
-        setMessage("User created successfully");
+        setMessage("User login successfully");
+        navigate("/home");
       } 
       else 
       {
@@ -67,53 +72,6 @@ const Login = () => {
     </div>
   );
 }
-
-
-// let data = {}
-// let form = document.forms["Login"];
-// if (form) 
-// {
-//   window.addEventListener('load', function() {
-    
-//     function getData() {
-
-//       let fd = new FormData(form);
-      
-//       for (let [key, prop] of fd) {
-//         data[key] = prop;
-//       }
-      
-//       console.log(data);
-//     }
-    
-//     form.addEventListener("submit", function(e){
-//       e.preventDefault();
-//       getData();
-//     });
-//   });    
-// }
-
-
-// let form1 = document.forms["Login"];
-// if (form1)
-// {
-//   form1.addEventListener('submit', function(e) {
-//     e.preventDefault();
-
-//     axios.post("http://localhost:8081/login", {
-//       data: JSON.stringify(data, null, 2)
-//     })
-//     .then(function (response) {
-//       if (response["status"] == "200") {
-//         console.log(response["status"])
-//       }
-//       console.log(response);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-//   })
-// }
 
 
 export default Login
