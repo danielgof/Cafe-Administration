@@ -2,6 +2,7 @@ package cafe.cafe.login.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,13 +26,13 @@ public class UsersController
         return userService.getUsers();
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @RequestMapping(value = "/login", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public ResponseEntity checkData(@RequestBody Map<String, Object> data)
     {
         String Login = (String) data.get("login");
         String Password = (String) data.get("password");
-        System.out.println(userService.Login(Login, Password));
+//        System.out.println(userService.Login(Login, Password));
         if (!userService.Login(Login, Password)) return new ResponseEntity(HttpStatus.BAD_REQUEST);
         else return new ResponseEntity(HttpStatus.OK);
     }
