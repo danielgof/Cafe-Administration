@@ -3,9 +3,11 @@ package com.example.order_register_new.controller;
 import com.example.order_register_new.model.Order;
 import com.example.order_register_new.service.OrderService;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/order")
 public class OrderController
@@ -17,11 +19,11 @@ public class OrderController
         this.orderService = orderService;
     }
 
-    @PostMapping
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> addOrder(@RequestBody Order order)
     {
         orderService.addOrder(order);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
     @PutMapping

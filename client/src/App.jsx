@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<StartPage />} />
           <Route exact path="/registration" element={<Registration />} />
-          <Route element={<ProtectedRouts />}>
+          <Route element={<ProtectedRouts isAuth={true} />}>
             <Route exact path="/home" element={<Home />} />
             <Route exact path="/client_reg" element={<ClientRegistration />} />
             <Route exact path="/order_reg" element={<OrderRegistration />} />  

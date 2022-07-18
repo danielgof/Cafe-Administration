@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+import ProtectedRouts from "../ProtectedRouts";
 // import axios from 'axios'
 
 
 const Login = () => {
   
   const navigate = useNavigate();
+
+  // const [isLogged, setIsLogged] = useState(false);
 
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
@@ -38,6 +41,8 @@ const Login = () => {
         setLogin("");
         setPassword("");
         setMessage("User login successfully");
+        // var isAuth = true;
+        // ProtectedRouts({isAuth})
         navigate("/home");
       } 
       else 
