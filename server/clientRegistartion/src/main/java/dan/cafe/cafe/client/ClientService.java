@@ -27,7 +27,7 @@ public class ClientService
     public void addNewClient(Client user){
 
         Optional<Client> studentOptional = clientRepository
-                .findStudentByEmail(user.getEmail());
+                .findClientByEmail(user.getEmail());
         if (studentOptional.isPresent())
         {
             throw new IllegalStateException("email taken");
@@ -59,7 +59,7 @@ public class ClientService
         if (email != null && email.length() > 0 && !Objects.equals(student.getName(), email))
         {
             Optional<Client> studentOptional = clientRepository
-                    .findStudentByEmail(student.getEmail());
+                    .findClientByEmail(student.getEmail());
             if (studentOptional.isPresent())
             {
                 throw new IllegalStateException("email taken");

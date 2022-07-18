@@ -42,7 +42,7 @@ const Login = () => {
       } 
       else 
       {
-        setMessage("Some error occured");
+        setMessage("Wrong login or password");
       }
     } catch (err) {
       console.log(err);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ClientReg from '../Components/ClientReg';
 
 
 export default class ClientRegistration extends Component {
@@ -6,6 +7,7 @@ export default class ClientRegistration extends Component {
     return (
       <div>
         <h2 align="center">ClientRegistration</h2>
+        <ClientReg />
         <a href="/home">
           <button>
             Home
