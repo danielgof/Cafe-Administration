@@ -1,0 +1,18 @@
+.clientReg {
+    position: relative;
+    left: 380px;
+    width: 100px;
+    height: 200px;
+}
+
+.clientList {
+    left: 1020px;
+    position: relative;
+}
+
+.home {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    left: 750px;
+}
