@@ -7,8 +7,8 @@ export default class StartPage extends Component {
   render() {
     return (
       <div>
-        <h1 align="center">Welcome to Daniel's cafe</h1>
-        <Login />
+        <h1 align="center">Cafe Administration</h1>
+        <Login className='login'/>
         <a href="/registration" >
           <button className="RegisterBtn">
             Register

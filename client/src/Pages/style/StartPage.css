@@ -1,4 +1,23 @@
 .RegisterBtn {
-    color: #61dafb;
+    position: relative;
+    left: 800px;
+    top: 20px;
+    bottom: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+    padding: 10px 10px;
+    transition-duration: 0.4s;
+    width: 320px;
+    height: 200px;
+    border-radius: 8px;
 }
 
+.RegisterBtn:hower {
+    background-color: #4CAF50;
+    color: white;
+}
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

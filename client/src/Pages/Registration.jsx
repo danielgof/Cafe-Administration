@@ -80,7 +80,7 @@ const Registration = () => {
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
       <a href="/">
-          <button>
+          <button >
             Login
           </button>
       </a>

@@ -5,14 +5,11 @@
     height: 200px;
 }
 
-.clientList {
-    left: 1020px;
-    position: relative;
-}
 
 .home {
+    top: 50px;
     position: relative;
     width: 400px;
     height: 400px;
-    left: 750px;
+    left: 780px;
 }
