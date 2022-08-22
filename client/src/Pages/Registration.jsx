@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import "./style/Registration.css"
-// import axios from 'axios'
-
 
 
 const Registration = () => {
@@ -80,60 +78,13 @@ const Registration = () => {
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>
       <a href="/">
-          <button >
+          <button className='login'>
             Login
           </button>
       </a>
     </div>
   );
 }
-
-
-// let data = {}
-// let form = document.forms["Login"];
-// if (form) 
-// {
-//   window.addEventListener('load', function() {
-    
-//     function getData() {
-
-//       let fd = new FormData(form);
-      
-//       for (let [key, prop] of fd) {
-//         data[key] = prop;
-//       }
-      
-//       console.log(data);
-//     }
-    
-//     form.addEventListener("submit", function(e){
-//       e.preventDefault();
-//       getData();
-//     });
-//   });    
-// }
-
-
-// let form1 = document.forms["Login"];
-// if (form1)
-// {
-//   form1.addEventListener('submit', function(e) {
-//     e.preventDefault();
-
-//     axios.post("http://localhost:8081/login", {
-//       data: JSON.stringify(data, null, 2)
-//     })
-//     .then(function (response) {
-//       if (response["status"] == "200") {
-//         console.log(response["status"])
-//       }
-//       console.log(response);
-//     })
-//     .catch(function (error) {
-//       console.log(error);
-//     });
-//   })
-// }
 
 
 export default Registration

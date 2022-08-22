@@ -1,3 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
 .clientReg {
     position: relative;
     left: 380px;
@@ -5,9 +12,15 @@
     height: 200px;
 }
 
+.usersList {
+    position: relative;
+    width: 700px;
+    height: 200px;
+}
+
 
 .home {
-    top: 50px;
+    top: 280px;
     position: relative;
     width: 400px;
     height: 400px;

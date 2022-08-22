@@ -1,0 +1,6 @@
+.foodTypes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+}

@@ -15,6 +15,7 @@ input {
   border-radius: 8px;
 }
 button {
+  bottom: 20px;
   border: 2px solid #4CAF50;
   padding: 1rem;
   width: 320px;
@@ -32,4 +33,9 @@ button:hover {
   font-size: 1.2em;
   text-align: center;
   color: #36a936;
+}
+
+.login {
+  top: 100px;
+  bottom: 20px;
 }

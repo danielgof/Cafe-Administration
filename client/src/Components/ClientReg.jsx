@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Login.css"
+import "./ClientReg.css"
 // import axios from 'axios'
 
 

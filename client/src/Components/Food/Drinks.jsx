@@ -24,7 +24,7 @@ class Label extends Component {
             margin: 0
             };
         return (
-            <p style={labelStyle}>{this.props.color}</p>
+            <p style={labelStyle}>Drinks</p>
         );
     }
 }
@@ -43,7 +43,7 @@ export default class Drinks extends Component {
         return (
             <div style={cardStyle}>
                 <Image color={this.props.color} />
-                <Label color={this.props.color} />
+                <Label />
             </div>
         );
     }
