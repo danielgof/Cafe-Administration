@@ -1,15 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"Clients/routes"
 	"github.com/gin-gonic/gin"
 )
 
-var app *gin.Engine
-
 func main() {
-	fmt.Println("Hello, World!")
-	app := gin.Default()
-	index()
-	app.Run()
+	router := gin.New()
+	routes.UserRoute(router)
+
+	router.Run(":5000")
 }
