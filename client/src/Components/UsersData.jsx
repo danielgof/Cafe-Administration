@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 // import '../tabledata.css';
  
-function TableData() {
+export default function TableData() {
     const [data, getData] = useState([])
     const URL = 'https://jsonplaceholder.typicode.com/posts';
  
@@ -9,41 +9,40 @@ function TableData() {
         fetchData()
     }, [])
  
- 
     const fetchData = () => {
         fetch(URL)
-            .then((res) =>
-                res.json())
- 
-            .then((response) => {
-                console.log(response);
-                getData(response);
-            })
- 
+        .then((res) =>
+        res.json())
+
+        .then((response) => {
+        console.log(response);
+        getData(response);
+    })
+
     }
  
     return (
-        <>
-            <h1>How to display JSON data to table in React JS</h1>
-            <tbody>
-                <tr>
-                    <th>User Id</th>
-                    <th>Id</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                </tr>
-                {data.map((item, i) => (
-                    <tr key={i}>
-                        <td>{item.userId}</td>
-                        <td>{item.id}</td>
-                        <td>{item.title}</td>
-                        <td>{item.body}</td>
+        <div>
+            <h1>User's data</h1>
+            <table className='table'>
+                <tbody>
+                    <tr>
+                        <th>User Id</th>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
                     </tr>
-                ))}
-            </tbody>
+                    {data.map((item, i) => (
+                        <tr key={i}>
+                            <td>{item.userId}</td>
+                            <td>{item.id}</td>
+                            <td>{item.title}</td>
+                            <td>{item.body}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
  
-        </>
+        </div>
     );
 }
- 
-export default TableData;

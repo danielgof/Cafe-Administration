@@ -94,7 +94,7 @@ const ClientRegistration = () => {
           onChange={(e) => setPhonenumber(e.target.value)}
         />
 
-        <button type="submit">Add client</button>
+        <button type="submit">Add new user</button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>

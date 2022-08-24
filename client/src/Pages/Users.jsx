@@ -14,7 +14,7 @@ export default class Clients extends Component {
             <ClientReg />
           </div>
           <div className='usersList'>
-            {/* <UsersData /> */}
+            <UsersData className='ud' />
           </div>
         </div>
           <div className='home'>

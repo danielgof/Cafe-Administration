@@ -1,28 +1,33 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 120px;
 }
 
-.clientReg {
-    position: relative;
-    left: 380px;
-    width: 100px;
-    height: 200px;
+.home {
+    text-align: center;
 }
 
 .usersList {
-    position: relative;
-    width: 700px;
-    height: 200px;
+    width: 730px;
+    height: 400px;
 }
 
-
-.home {
-    top: 280px;
-    position: relative;
-    width: 400px;
+table, tr td {
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+}
+tbody {
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    display: block;
     height: 400px;
-    left: 780px;
+    overflow: auto;
+}
+thead, tbody tr {
+    border: 1px solid #4CAF50;
+    border-radius: 8px;
+    display: table;
+    width: 100%;
+    table-layout: fixed;/* even columns width , fix width of table too*/
 }

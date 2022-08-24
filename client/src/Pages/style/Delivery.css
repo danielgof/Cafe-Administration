@@ -4,3 +4,8 @@
     justify-content: flex-start;
     padding: 20px;
 }
+
+.btnHome {
+    text-align: center;
+    top: 80px;
+}

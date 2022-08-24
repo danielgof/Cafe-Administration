@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
-
+import logo from './Styles/Drinks.jpg';
+// import './Styles/'
 
 class Image extends Component {
     render() {
     var squareStyle = {
-        height: 150,
-        backgroundColor: this.props.color
+        backgroundImage: `url(${logo})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '80%'
         };
     return (
-        <div style={squareStyle}>
+        <div className='drinkImg' style={squareStyle}>
         </div>
     );
 }
@@ -34,8 +39,8 @@ export default class Drinks extends Component {
     
     render() { 
         var cardStyle = {
-            height: 200,
-            width: 150,
+            height: 300,
+            width: 250,
             padding: 0,
             backgroundColor: "#FFF",
             boxShadow: "0px 0px 5px #666"

@@ -6,6 +6,7 @@ import SeaFood from '../Components/Food/SeaFood.jsx';
 import Starters from '../Components/Food/Starters.jsx';
 import Steaks from '../Components/Food/Steaks.jsx';
 import './style/Delivery.css';
+import Menu from '../Components/Menu.jsx';
 
 
 export default class OrderRegistration extends Component {
@@ -13,20 +14,17 @@ export default class OrderRegistration extends Component {
     return (
       <div>
         <h2 align="center">OrderRegistration</h2>
-        <div className='foodTypes'>
-          <Drinks color="#FFA737"/>
-          <Desserts color="#FAA843"/>
-          <Salads color="#FAA843"/>
-          <SeaFood color="#FAA843"/>
-          <Starters color="#FAA843"/>
-          <Steaks color="#FAA843"/>
+        <div>
+          <Menu />
         </div>
-        
-        <a href="/home">
-          <button>
-            Home
-          </button>
-        </a>
+        <h2></h2>
+        <div className='btnHome'>
+          <a href="/home">
+            <button>
+              Home
+            </button>
+          </a>  
+        </div>
       </div>
     )
   }
