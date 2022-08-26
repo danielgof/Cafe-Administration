@@ -4,7 +4,7 @@ import UsersData from '../Components/UsersData';
 import './style/Users.css';
 
 
-export default class Clients extends Component {
+export default class Users extends Component {
   render() {
     return (
       <div>

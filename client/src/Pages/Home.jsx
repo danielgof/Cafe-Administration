@@ -9,9 +9,9 @@ export default class Home extends Component {
         <h2 align="center">Home</h2>
         <div className='main'>    
           <div className='clr'>
-            <a href="/clients">
+            <a href="/users">
               <button className='clientreg'>
-                Registration of a new client
+                User's data
               </button>
             </a>
           </div>
@@ -19,6 +19,13 @@ export default class Home extends Component {
             <a href="/delivery">
               <button className='delivery'>
                 Delivery
+              </button>
+            </a>
+          </div>
+          <div className='us'>
+            <a href="/clients">
+              <button className='users'>
+                Client's data
               </button>
             </a>
           </div>

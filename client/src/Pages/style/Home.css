@@ -44,22 +44,27 @@
 
 .clr {
     position: relative;
-    left: 380px;
-    width: 100px;
-    height: 200px;
+    text-align: center;
 }
 
 .dl {
-    left: 1020px;
     position: relative;
+    text-align: center;
 }
 
+.us {
+    position: relative;
+    text-align: center;
+}
 
 .main {
     height: 200px;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap; */
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 120px;
 }
 
 h2 {
