@@ -7,7 +7,7 @@ export default class OrderRegistration extends Component {
   render() {
     return (
       <div>
-        <h2 align="center">OrderRegistration</h2>
+        <h2 align="center">Delivery</h2>
         <div>
           <Menu />
         </div>

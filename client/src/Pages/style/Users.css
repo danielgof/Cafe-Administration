@@ -1,7 +1,17 @@
 .container {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 120px;
+    /* grid-column-gap: 120px; */
+}
+
+.clientReg {
+    position: relative;
+    text-align: center;
+}
+
+.usersList {
+    position: relative;
+    text-align: center;
 }
 
 .home {

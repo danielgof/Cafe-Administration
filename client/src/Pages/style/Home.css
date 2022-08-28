@@ -36,10 +36,8 @@
 }
 
 .log {
+    text-align: center;
     position: relative;
-    width: 400px;
-    height: 200px;
-    left: 750px;
 }
 
 .clr {
