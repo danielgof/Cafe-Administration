@@ -10,5 +10,5 @@ func main() {
 	router := gin.New()
 	db.Connect()
 	routes.UserRoute(router)
-	router.Run(":5000")
+	router.Run(":8003")
 }
