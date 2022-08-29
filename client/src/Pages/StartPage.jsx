@@ -9,11 +9,11 @@ export default class StartPage extends Component {
       <div>
         <h1 align="center">Cafe Administration</h1>
         <Login className='login'/>
-        <a href="/registration" >
+        {/* <a href="/registration" >
           <button className="RegisterBtn">
             Register
           </button>
-        </a>
+        </a> */}
       </div>
     )
   }

@@ -7,9 +7,9 @@ import './style/Users.css';
 export default class Users extends Component {
   render() {
     return (
-      <div>
+      <div className='mn'>
         <h3 align="center">Users</h3>
-        <div className='container'>
+        <div className='ctr'>
           <div className="clientReg">
             <ClientReg />
           </div>
@@ -17,13 +17,13 @@ export default class Users extends Component {
             <UsersData className='ud' />
           </div>
         </div>
-          <div className='home'>
-            <a href="/home">
-              <button>
-                Home
-              </button>
-            </a>
-          </div>
+        <div className='home'>
+          <a href="/home">
+            <button>
+              Home
+            </button>
+          </a>
+        </div>
       </div>
     )
   }
