@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react'
 import "./style/Registration.css"
 // import axios from 'axios'
@@ -137,3 +138,23 @@ const Registration = () => {
 
 
 export default Registration
+=======
+import React, { Component } from 'react'
+import Reg from '../Components/Reg'
+import "./style/Registration.css"
+
+export default class Registration extends Component {
+  render() {
+    return (
+      <div className='container'>
+        <Reg />
+        <a href="/">
+          <button className='login'>
+            Login
+          </button>
+        </a>
+      </div>
+    )
+  }
+}
+>>>>>>> fcd647004f1b6a8017ded6183d91fa7eb7264aa3

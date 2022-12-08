@@ -56,7 +56,7 @@ const Login = () => {
 
   return (
     <div className="Login">
-      <form onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={login}
@@ -70,7 +70,7 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">Login</button>
+        <button className="login" type="submit">Login</button>
 
         <div className="message">{message ? <p>{message}</p> : null}</div>
       </form>

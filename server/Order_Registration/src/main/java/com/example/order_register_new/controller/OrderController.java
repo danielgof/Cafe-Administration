@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/delivery/")
 public class OrderController
 {
     private final OrderService orderService;
@@ -26,12 +26,12 @@ public class OrderController
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 
-    @PutMapping
-    public ResponseEntity<Object> updateOrder(Order order)
-    {
-        orderService.updateOrder(order);
-        return ResponseEntity.ok().build();
-    }
+//    @PutMapping
+//    public ResponseEntity<Object> updateOrder(Order order)
+//    {
+//        orderService.updateOrder(order);
+//        return ResponseEntity.ok().build();
+//    }
 
     @GetMapping
     public ResponseEntity getAllOrders()
@@ -39,16 +39,16 @@ public class OrderController
         return ResponseEntity.ok(orderService.getAllOrders());
     }
 
-    @GetMapping("/{Id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable String Id)
-    {
-        return ResponseEntity.ok(orderService.getOrderById(Id));
-    }
-
-    @DeleteMapping("/{Id}")
-    public ResponseEntity<Object> deleteOrder(@PathVariable String Id)
-    {
-        orderService.deleteOrder(Id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
+//    @GetMapping("/{Id}")
+//    public ResponseEntity<Order> getOrderById(@PathVariable String Id)
+//    {
+//        return ResponseEntity.ok(orderService.getOrderById(Id));
+//    }
+//
+//    @DeleteMapping("/{Id}")
+//    public ResponseEntity<Object> deleteOrder(@PathVariable String Id)
+//    {
+//        orderService.deleteOrder(Id);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 }
