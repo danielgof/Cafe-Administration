@@ -1,1 +1,0 @@
-java -jar target/order_register_new-0.0.1-SNAPSHOT.jar

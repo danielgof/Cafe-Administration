@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StartPage from './Pages/StartPage';
 import Home from './Pages/Home';
-import ClientRegistration from './Pages/ClientRegistration';
+import Clients from './Pages/Clients';
 import OrderRegistration from './Pages/OrderRegistration';
 import Registration from './Pages/Registration';
 import ProtectedRouts from './ProtectedRouts';
@@ -19,8 +19,8 @@ function App() {
           <Route exact path="/registration" element={<Registration />} />
           <Route element={<ProtectedRouts isAuth={true} />}>
             <Route exact path="/home" element={<Home />} />
-            <Route exact path="/client_reg" element={<ClientRegistration />} />
-            <Route exact path="/order_reg" element={<OrderRegistration />} />  
+            <Route exact path="/clients" element={<Clients />} />
+            <Route exact path="/delivery" element={<OrderRegistration />} />  
           </Route>        
         </Routes>
       </div>
