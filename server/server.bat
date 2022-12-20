@@ -1,9 +1,0 @@
-cd ./login
-start login.bat
-cd ..
-cd ./orderRegistration
-start orderRegistration.bat
-cd ..
-cd ./clientRegistartion
-start clientRegistration.bat
-cd ..
