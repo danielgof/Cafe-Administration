@@ -1,7 +1,7 @@
-package com.jwt.service;
+package sever.service;
 
-import com.jwt.domain.AuthUser;
-import com.jwt.domain.AuthRole;
+import sever.domain.AuthUser;
+import sever.domain.AuthRole;
 
 
 import java.util.List;

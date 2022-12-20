@@ -1,9 +1,9 @@
-package com.jwt.service;
+package sever.service;
 
-import com.jwt.domain.AuthRole;
-import com.jwt.domain.AuthUser;
-import com.jwt.repo.RoleRepo;
-import com.jwt.repo.UserRepo;
+import sever.domain.AuthRole;
+import sever.domain.AuthUser;
+import sever.repo.RoleRepo;
+import sever.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

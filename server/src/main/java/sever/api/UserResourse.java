@@ -1,13 +1,14 @@
-package com.jwt.api;
+package sever.api;
 
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.jwt.domain.AuthRole;
-import com.jwt.domain.AuthUser;
-import com.jwt.service.UserService;
+import sever.api.utils.RoleToUser;
+import sever.domain.AuthRole;
+import sever.domain.AuthUser;
+import sever.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -49,7 +50,7 @@ public class UserResourse {
     }
 
     @PostMapping("/role/addroletouser")
-    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUserForm form) {
+    public ResponseEntity<?> addRoleToUser(@RequestBody RoleToUser form) {
         userService.addRoleToUser(form.getUsername(), form.getRoleName());
         return ResponseEntity.ok().build();
     }
@@ -91,8 +92,3 @@ public class UserResourse {
     }
 }
 
-@Data
-class RoleToUserForm {
-    private String username;
-    private String roleName;
-}

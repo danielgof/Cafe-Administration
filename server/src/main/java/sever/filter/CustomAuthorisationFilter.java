@@ -1,4 +1,4 @@
-package com.jwt.filter;
+package sever.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -10,8 +10,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -56,7 +54,6 @@ public class CustomAuthorisationFilter extends OncePerRequestFilter {
                 catch (Exception exception) {
                     log.error("Error logging in: {}", exception.getMessage());
                     response.setHeader("error", exception.getMessage());
-//                    response.sendError(HttpServletResponse.SC_FORBIDDEN);
                     Map<String,String> error = new HashMap<>();
                     error.put("access_token",exception.getMessage());
                     response.setContentType(MediaType.APPLICATION_JSON_VALUE);

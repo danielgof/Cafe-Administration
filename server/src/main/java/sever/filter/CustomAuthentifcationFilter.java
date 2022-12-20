@@ -1,4 +1,4 @@
-package com.jwt.filter;
+package sever.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;

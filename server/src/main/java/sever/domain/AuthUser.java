@@ -1,4 +1,4 @@
-package com.jwt.domain;
+package sever.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +13,6 @@ import java.util.Collection;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AuthUser {
-
     @Id
     @SequenceGenerator(
             name = "authuser_sequence",
@@ -26,12 +25,15 @@ public class AuthUser {
     )
     private Long id;
     private String name;
+    private String lastname;
+    private String dob;
     private String username;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     private Collection<AuthRole> roles = new ArrayList<>();
 
-    public AuthUser(String name, String username, String password, Collection<AuthRole> roles) {
+    public AuthUser(String name, String lastname, String dob,
+                    String username, String password, Collection<AuthRole> roles) {
         this.name = name;
         this.username = username;
         this.password = password;

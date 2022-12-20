@@ -1,6 +1,6 @@
-package com.jwt.repo;
+package sever.repo;
 
-import com.jwt.domain.AuthUser;
+import sever.domain.AuthUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepo extends JpaRepository<AuthUser, Long> {

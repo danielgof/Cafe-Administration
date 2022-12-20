@@ -1,4 +1,4 @@
-package com.jwt.domain;
+package sever.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

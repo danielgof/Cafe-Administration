@@ -1,6 +1,6 @@
-package com.jwt.repo;
+package sever.repo;
 
-import com.jwt.domain.AuthRole;
+import sever.domain.AuthRole;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

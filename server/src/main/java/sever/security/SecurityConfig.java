@@ -1,7 +1,7 @@
-package com.jwt.security;
+package sever.security;
 
-import com.jwt.filter.CustomAuthentifcationFilter;
-import com.jwt.filter.CustomAuthorisationFilter;
+import sever.filter.CustomAuthentifcationFilter;
+import sever.filter.CustomAuthorisationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -35,6 +35,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().antMatchers("/api/login").permitAll();
+        http.authorizeRequests().antMatchers("/api/v1/auth/login").permitAll();
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/user/**", "/token/refresh/**").hasAuthority("ROLE_USER");
         http.authorizeRequests().antMatchers(HttpMethod.GET, "/api/admin/**").hasAuthority("ROLE_ADMIN");
         http.authorizeRequests().anyRequest().authenticated();
