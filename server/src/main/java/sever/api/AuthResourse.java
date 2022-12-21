@@ -7,12 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.web.bind.annotation.*;
+import sever.domain.AuthRole;
 import sever.domain.AuthUser;
 import sever.service.UserService;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -20,21 +19,31 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
 public class AuthResourse {
+    
     private final UserService userService;
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthUser authUser) {
         log.info(authUser.getUsername());
+//        Map<String, Object> claims = new HashMap<>();
+        Set<String> Userroles = new HashSet<>();
+        AuthUser user = userService.getUser(authUser.getUsername());
+//        for(AuthRole role:user.getRoles()){
+//            Userroles.add(role.getName());
+//        }
+//        claims.put("Roles", Userroles.toArray());
+//        System.out.println(claims);
         Algorithm algorithm = Algorithm.HMAC256("secret".getBytes());
         String access_token = JWT.create()
                 .withSubject(authUser.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 10*60*1000))
 //                .withClaim("roles", authUser.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
+                .withClaim("roles", Arrays.asList(Userroles.toArray()))
                 .sign(algorithm);
         String refresh_token = JWT.create()
                 .withSubject(authUser.getUsername())
                 .withExpiresAt(new Date(System.currentTimeMillis() + 30*60*1000))
-//                .withClaim("roles", authUser.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
+                .withClaim("roles", Arrays.asList(Userroles.toArray()))
                 .sign(algorithm);
         Map<String,String> tokens = new HashMap<>();
         tokens.put("access_token",access_token);
