@@ -15,6 +15,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Slf4j
+@CrossOrigin("*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/auth")
