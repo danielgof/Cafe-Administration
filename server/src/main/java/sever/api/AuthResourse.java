@@ -22,6 +22,7 @@ public class AuthResourse {
     
     private final UserService userService;
 
+//    login api
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthUser authUser) {
         log.info(authUser.getUsername());
