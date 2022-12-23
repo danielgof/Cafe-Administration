@@ -2,6 +2,8 @@ package sever;
 
 import sever.domain.AuthRole;
 import sever.domain.AuthUser;
+import sever.domain.ModelFood;
+import sever.service.FoodService;
 import sever.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,22 +27,30 @@ public class Application {
     }
 
     @Bean
-    CommandLineRunner run(UserService userService) {
+    CommandLineRunner run(UserService userService,
+                          FoodService foodService) {
         return args -> {
             userService.saveRole(new AuthRole("ROLE_ADMIN"));
             userService.saveRole(new AuthRole("ROLE_WAITER"));
             userService.saveRole(new AuthRole("ROLE_MANAGER"));
 
             userService.saveUser(new AuthUser("John", "Falckon", "02.03.1977", "john3", "1234", new ArrayList<>()));
-            userService.saveUser(new AuthUser("David","Buzzle", "09.12.1989",  "dv44", "1234",new ArrayList<>()));
+            userService.saveUser(new AuthUser("David","Buzzle", "09.12.1989",  "dv44", "1234", new ArrayList<>()));
             userService.saveUser(new AuthUser("Ross", "Geller", "04.08.1970", "user", "1234", new ArrayList<>()));
-            userService.saveUser(new AuthUser("Chandler", "Bing", "07.09.1970", "chb", "1234",new ArrayList<>()));
+            userService.saveUser(new AuthUser("Chandler", "Bing", "07.09.1970", "chb", "1234", new ArrayList<>()));
 
             userService.addRoleToUser("john3", "ROLE_WAITER");
             userService.addRoleToUser("dv44", "ROLE_WAITER");
             userService.addRoleToUser("user", "ROLE_WAITER");
             userService.addRoleToUser("chb", "ROLE_ADMIN");
             userService.addRoleToUser("chb", "ROLE_WAITER");
+
+            foodService.saveFood(new ModelFood("drink", "cola"));
+            foodService.saveFood(new ModelFood("dessert", "meringue"));
+            foodService.saveFood(new ModelFood("salad", "cesar"));
+            foodService.saveFood(new ModelFood("seafood", "baked trout"));
+            foodService.saveFood(new ModelFood("starter", "shrimps with cheese"));
+            foodService.saveFood(new ModelFood("steak", "beef steak"));
         };
     }
 }
