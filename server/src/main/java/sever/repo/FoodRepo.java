@@ -21,4 +21,6 @@ public interface FoodRepo extends JpaRepository<ModelFood, Long> {
     List<ModelFood> findAllStarters();
     @Query("select f from  ModelFood f where f.type='steak'")
     List<ModelFood> findAllSteaks();
+    @Query("select distinct f.type from ModelFood f")
+    List<?> findAllFoodTypes();
 }

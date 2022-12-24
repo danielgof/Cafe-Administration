@@ -9,7 +9,7 @@ const Header = () => {
     <>
       <Navbar fixed='top' bg="light" expand="md">
         <Container>
-          <Navbar.Brand href="/home">
+          <Navbar.Brand href="/home_waiter">
             <img 
               src={logo}
               height="45"
@@ -21,8 +21,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse className="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/order">Даннные о пользователях</Nav.Link>
-              <Nav.Link href="/analytics">Добавить пользователя</Nav.Link>
+              <Nav.Link href="/order">Order</Nav.Link>
+              {/* <Nav.Link href="/analytics">Analytics</Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

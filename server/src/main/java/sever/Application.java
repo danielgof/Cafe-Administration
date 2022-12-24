@@ -45,12 +45,43 @@ public class Application {
             userService.addRoleToUser("chb", "ROLE_ADMIN");
             userService.addRoleToUser("chb", "ROLE_WAITER");
 
+//            drinks
             foodService.saveFood(new ModelFood("drink", "cola"));
+            foodService.saveFood(new ModelFood("drink", "pepsi"));
+            foodService.saveFood(new ModelFood("drink", "black tea"));
+            foodService.saveFood(new ModelFood("drink", "green tea"));
+            foodService.saveFood(new ModelFood("drink", "beer"));
+            foodService.saveFood(new ModelFood("drink", "hot chocolate"));
+//            desserts
             foodService.saveFood(new ModelFood("dessert", "meringue"));
+            foodService.saveFood(new ModelFood("dessert", "chocolate cake"));
+            foodService.saveFood(new ModelFood("dessert", "chert cake"));
+            foodService.saveFood(new ModelFood("dessert", "chocolate candy"));
+//            salads
             foodService.saveFood(new ModelFood("salad", "cesar"));
+            foodService.saveFood(new ModelFood("salad", "som tam"));
+            foodService.saveFood(new ModelFood("salad", "caprese"));
+            foodService.saveFood(new ModelFood("salad", "olivier"));
+            foodService.saveFood(new ModelFood("salad", "fattoush"));
+            foodService.saveFood(new ModelFood("salad", "kisir"));
+//            seafood
             foodService.saveFood(new ModelFood("seafood", "baked trout"));
+            foodService.saveFood(new ModelFood("seafood", "fish and chips"));
+            foodService.saveFood(new ModelFood("seafood", "sashimi"));
+            foodService.saveFood(new ModelFood("seafood", "bisque"));
+            foodService.saveFood(new ModelFood("seafood", "nigiri"));
+            foodService.saveFood(new ModelFood("seafood", "crab cake"));
+            foodService.saveFood(new ModelFood("seafood", "tendon"));
+            foodService.saveFood(new ModelFood("seafood", "ceviche"));
+//            starters
             foodService.saveFood(new ModelFood("starter", "shrimps with cheese"));
+            foodService.saveFood(new ModelFood("starter", "namas"));
+            foodService.saveFood(new ModelFood("starter", "cheese plate"));
+            foodService.saveFood(new ModelFood("starter", "backed spring trols"));
+//            steaks
             foodService.saveFood(new ModelFood("steak", "beef steak"));
+            foodService.saveFood(new ModelFood("steak", "ribeye steak"));
+            foodService.saveFood(new ModelFood("steak", "strip steak"));
         };
     }
 }

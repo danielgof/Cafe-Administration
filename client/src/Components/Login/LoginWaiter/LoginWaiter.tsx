@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PerfomeLogin from "./PerfomeLogin";
+import PerfomeLogin from "../PerfomeLogin";
 
 const Login = () => {
     const URL: string = 'http://localhost:8080/api/v1/auth';
@@ -42,7 +42,7 @@ const Login = () => {
             // ProtectedRouts({isAuth})
             // console.log(`login state ${login}`);
             // setLogin((prevState) => !prevState);
-            navigate("/home");
+            navigate("/home_waiter");
             permitLogin();
             // console.log(`login state ${login}`);
         } else {

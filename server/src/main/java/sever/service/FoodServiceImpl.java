@@ -26,6 +26,11 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public List<?> getAllFoodTypes() {
+        return foodRepo.findAllFoodTypes();
+    }
+
+    @Override
     public List<ModelFood> getAllSteaks() {
         return foodRepo.findAllSteaks();
     }

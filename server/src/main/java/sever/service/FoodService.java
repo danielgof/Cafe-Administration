@@ -12,6 +12,7 @@ public interface FoodService {
     List<ModelFood> getAllSeafood();
     List<ModelFood> getAllStarters();
     List<ModelFood> getAllSteaks();
+    List<?> getAllFoodTypes();
     ModelFood saveFood(ModelFood food);
     ModelFood getFoodByTitle(String title);
 }

@@ -52,4 +52,9 @@ public class FoodResourse {
     public ResponseEntity<List<ModelFood>> getSteaks() {
         return ResponseEntity.ok().body(foodService.getAllSteaks());
     }
+
+    @GetMapping("/types")
+    public ResponseEntity<List<?>> getFoodTypes() {
+        return ResponseEntity.ok().body(foodService.getAllFoodTypes());
+    }
 }

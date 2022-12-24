@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../../Components/Navbar/Navbar';
+import Header from '../../../Components/WaiterComponents/Header/Navbar';
 
 const MainPage = () => {
   return (
