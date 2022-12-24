@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
+// import logo from './FoodTypesImg/desserts.png';
 
 const FoodTypeCard = (props: any) => {
   const [showAll, setShowAll] = useState(false);
@@ -29,19 +30,12 @@ const FoodTypeCard = (props: any) => {
     <Card className='container'>
       <Card.Body>
         <Card.Title>
-          {props.type}s
+          {props.type.toUpperCase()}S
         </Card.Title>
         <Card.Text className='text-card'>
           <div className='person-card-img-container'>
             <div className='person-card-img'>
-              <img src="https://eu.ui-avatars.com/api/?name=John+Doe&size=150" alt="avatar"/>
-            </div>
-            <div className='person-card-maindata'>
-              Должность: {props.position}
-              <br />
-              Имя: {props.name}
-              <br />
-              Фамилия: {props.lastname}
+              {/* <img src={logo} alt="foodlogo"/> */}
             </div>
           </div>
         </Card.Text>

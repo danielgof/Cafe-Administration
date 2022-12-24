@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PerfomeLogin from "../PerfomeLogin";
+import './LoginWaiter.css';
+// import PerfomeLogin from "../PerfomeLogin";
 
 const Login = () => {
     const URL: string = 'http://localhost:8080/api/v1/auth';
@@ -8,7 +9,7 @@ const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [login, setLogin] = useState<boolean>(false);
-        // const { isAuth } = PerfomeLogin();
+    // const { isAuth } = PerfomeLogin();
     // console.log(isAuth);
     let handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -52,17 +53,22 @@ const Login = () => {
     }};
     return (
         <>
-            <form className="login-form" onSubmit={handleSubmit}>
+            <form className="login-waiter-form" onSubmit={handleSubmit}>
+                <h3>Waiter Login</h3>
+                <label>Username</label>
                 <input
                 type="text"
                 value={username}
                 placeholder="username"
+                id="username"
                 onChange={(e) => setUsername(e.target.value)}
                 />
+                <label>Password</label>
                 <input
                 type="text"
                 value={password}
                 placeholder="password"
+                id="password"
                 onChange={(e) => setPassword(e.target.value)}
                 />
 

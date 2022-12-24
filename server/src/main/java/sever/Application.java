@@ -64,15 +64,15 @@ public class Application {
             foodService.saveFood(new ModelFood("salad", "olivier"));
             foodService.saveFood(new ModelFood("salad", "fattoush"));
             foodService.saveFood(new ModelFood("salad", "kisir"));
-//            seafood
-            foodService.saveFood(new ModelFood("seafood", "baked trout"));
-            foodService.saveFood(new ModelFood("seafood", "fish and chips"));
-            foodService.saveFood(new ModelFood("seafood", "sashimi"));
-            foodService.saveFood(new ModelFood("seafood", "bisque"));
-            foodService.saveFood(new ModelFood("seafood", "nigiri"));
-            foodService.saveFood(new ModelFood("seafood", "crab cake"));
-            foodService.saveFood(new ModelFood("seafood", "tendon"));
-            foodService.saveFood(new ModelFood("seafood", "ceviche"));
+////            seafood
+//            foodService.saveFood(new ModelFood("seafood", "baked trout"));
+//            foodService.saveFood(new ModelFood("seafood", "fish and chips"));
+//            foodService.saveFood(new ModelFood("seafood", "sashimi"));
+//            foodService.saveFood(new ModelFood("seafood", "bisque"));
+//            foodService.saveFood(new ModelFood("seafood", "nigiri"));
+//            foodService.saveFood(new ModelFood("seafood", "crab cake"));
+//            foodService.saveFood(new ModelFood("seafood", "tendon"));
+//            foodService.saveFood(new ModelFood("seafood", "ceviche"));
 //            starters
             foodService.saveFood(new ModelFood("starter", "shrimps with cheese"));
             foodService.saveFood(new ModelFood("starter", "namas"));

@@ -3,11 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './DC.png';
+import './Header.css';
 
 const Header = () => {
   return (
     <>
-      <Navbar fixed='top' bg="light" expand="md">
+      <Navbar fixed='top' className='header' expand="md">
         <Container>
           <Navbar.Brand href="/home_waiter">
             <img 
