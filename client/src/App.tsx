@@ -23,6 +23,7 @@ function App() {
             <Route element={<ProtectedRoutes isAuth={isAuth} />}>
               <Route path="/home_waiter" element={<MainPage />} />
               <Route path="/order" element={<OrderPage />} />
+              <Route path="/order_create" element={<OrderPage />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
            </Route>        
          </Routes>

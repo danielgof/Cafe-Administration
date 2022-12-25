@@ -3,6 +3,8 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './DC.png';
+import { HiShoppingCart } from 'react-icons/hi';
+import { IconContext } from "react-icons";
 import './Header.css';
 
 const Header = () => {
@@ -24,6 +26,13 @@ const Header = () => {
             <Nav className="me-auto">
               <Nav.Link href="/order">Order</Nav.Link>
               {/* <Nav.Link href="/analytics">Analytics</Nav.Link> */}
+            </Nav>
+            <Nav>
+              <Nav.Link href="order_create">
+                <IconContext.Provider value={{ size: "100px",  className: "global-class-name" }}>
+                  <HiShoppingCart />
+                </IconContext.Provider>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

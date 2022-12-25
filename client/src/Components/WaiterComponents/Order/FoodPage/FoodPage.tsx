@@ -10,17 +10,17 @@ const FoodPage = ({ itemsPerPage }: any) => {
     // const requestHeaders: HeadersInit = new Headers();
     // requestHeaders.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMyIsInJvbGVzIjpbXSwiZXhwIjoxNjcxODc1NjM2fQ.QtHKF_JJEyhQLDM_2PMavVuFxNzgPwzkk7ZjCKFHoqA');
     useEffect(() => {
-        fetchData()
+      fetchData()
     }, [])
   
     const fetchData = () => {
       fetch(URL)
-        .then((res) =>
-          res.json())
-        .then((response) => {
-          console.log(response.result);
-          getData(response);
-        })
+      .then((res) =>
+        res.json())
+      .then((response) => {
+        console.log(response.result);
+        getData(response);
+      })
     }
   
     const [itemOffset, setItemOffset] = useState(0);

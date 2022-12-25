@@ -1,3 +1,11 @@
 .header {
     background-color: #F4FFDC;
 }
+
+.global-class-name {
+    height: 60px;
+}
+
+.me-auto {
+    font-size: larger;
+}
