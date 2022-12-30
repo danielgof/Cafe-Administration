@@ -9,6 +9,7 @@ import OrderPage from './Pages/WaiterPage/OrderPage/OrderPage';
 import AnalyticsPage from './Pages/ManagerPages/AnalyticsPage/AnalyticsPage';
 import WaiterLogin from './Pages/Login/WaiterLogin/WaiterLogin';
 import ManagerLogin from './Pages/Login/ManagerLogin/ManagerLogin';
+import FinishOrderPage from './Pages/WaiterPage/FinishOrderPage/FinishOrderPage';
 
 function App() {
   const isAuth = true;
@@ -23,7 +24,7 @@ function App() {
             <Route element={<ProtectedRoutes isAuth={isAuth} />}>
               <Route path="/home_waiter" element={<MainPage />} />
               <Route path="/order" element={<OrderPage />} />
-              <Route path="/order_create" element={<OrderPage />} />
+              <Route path="/order_create" element={<FinishOrderPage />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
            </Route>        
          </Routes>

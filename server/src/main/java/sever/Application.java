@@ -3,7 +3,9 @@ package sever;
 import sever.domain.AuthRole;
 import sever.domain.AuthUser;
 import sever.domain.ModelFood;
+import sever.domain.ModelOrder;
 import sever.service.FoodService;
+import sever.service.OrderService;
 import sever.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @SpringBootApplication
 public class Application {
@@ -28,7 +31,9 @@ public class Application {
 
     @Bean
     CommandLineRunner run(UserService userService,
-                          FoodService foodService) {
+                          FoodService foodService,
+                          OrderService orderService
+    ) {
         return args -> {
             userService.saveRole(new AuthRole("ROLE_ADMIN"));
             userService.saveRole(new AuthRole("ROLE_WAITER"));
@@ -82,6 +87,8 @@ public class Application {
             foodService.saveFood(new ModelFood("steak", "beef steak"));
             foodService.saveFood(new ModelFood("steak", "ribeye steak"));
             foodService.saveFood(new ModelFood("steak", "strip steak"));
+
+            orderService.saveOrder(new ModelOrder("aaaaaaa", "aaaa", "aaaa"));
         };
     }
 }
