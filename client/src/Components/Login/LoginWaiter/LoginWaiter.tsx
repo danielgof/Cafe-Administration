@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import LoginContext from "../PerfomeLogin";
 import './LoginWaiter.css';
 
-const Login = () => {
+const LoginWaiter = () => {
     const URL = 'http://localhost:8080/api/v1/auth';
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
@@ -74,4 +74,4 @@ const Login = () => {
         </>
     )
 }
-export default Login;
+export default LoginWaiter;

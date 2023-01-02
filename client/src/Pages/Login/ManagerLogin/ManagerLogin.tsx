@@ -1,11 +1,11 @@
 import React from 'react'
-import Login from '../../../Components/Login/LoginWaiter/LoginWaiter';
+import LoginManager from '../../../Components/Login/LoginManager/LoginManager';
 
 const ManagerLogin = () => {
   return (
     <>
       <h1>Login as manager</h1>
-      <Login />
+      <LoginManager />
     </>
   )
 }

@@ -11,6 +11,7 @@ import WaiterLogin from './Pages/Login/WaiterLogin/WaiterLogin';
 import ManagerLogin from './Pages/Login/ManagerLogin/ManagerLogin';
 import FinishOrderPage from './Pages/WaiterPage/FinishOrderPage/FinishOrderPage';
 import LoginContext from "./Components/Login/PerfomeLogin";
+import ManagerMainPage from './Pages/ManagerPages/ManagerMainPage/ManagerMainPage';
 
 function App() {
   const [isAuth, setLogin] = useState(false);
@@ -26,6 +27,7 @@ function App() {
             <Route path="/manager_login" element={<ManagerLogin />} />
             <Route element={<ProtectedRoutes isAuth={isAuth} />}>
               <Route path="/home_waiter" element={<MainPage />} />
+              <Route path="/home_manager" element={<ManagerMainPage />} />
               <Route path="/order" element={<OrderPage />} />
               <Route path="/order_create" element={<FinishOrderPage />} />
               <Route path="/analytics" element={<AnalyticsPage />} />
