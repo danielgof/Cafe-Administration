@@ -48,7 +48,7 @@ const LoginManager = () => {
     return (
         <>
         <LoginContext.Provider value={value}>
-            <form className="login-waiter-form" onSubmit={handleSubmit}>
+            <form className="login-manager-form" onSubmit={handleSubmit}>
                 <h3>Manager Login</h3>
                 <label>Username</label>
                 <input

@@ -4,7 +4,6 @@ import LoginManager from '../../../Components/Login/LoginManager/LoginManager';
 const ManagerLogin = () => {
   return (
     <>
-      <h1>Login as manager</h1>
       <LoginManager />
     </>
   )
