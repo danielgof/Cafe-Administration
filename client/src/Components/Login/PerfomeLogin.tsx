@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { createContext } from "react";
 
-const PerfomeLogin = () => {
-  const [isAuth, setIsAuth] = useState(false);
-  
-  return {isAuth}
-}
-export default PerfomeLogin;
+const LoginContext = createContext({
+  isAuth: Boolean,
+  setLogin: (login: any) => {}
+});
+
+export default LoginContext;

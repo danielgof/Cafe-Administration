@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -10,11 +10,14 @@ import AnalyticsPage from './Pages/ManagerPages/AnalyticsPage/AnalyticsPage';
 import WaiterLogin from './Pages/Login/WaiterLogin/WaiterLogin';
 import ManagerLogin from './Pages/Login/ManagerLogin/ManagerLogin';
 import FinishOrderPage from './Pages/WaiterPage/FinishOrderPage/FinishOrderPage';
+import LoginContext from "./Components/Login/PerfomeLogin";
 
 function App() {
-  const isAuth = true;
+  const [isAuth, setLogin] = useState(false);
+  const value = useMemo(() => ({ isAuth, setLogin }), [isAuth]);
   return (
     <>
+    <LoginContext.Provider value={value}>
       <BrowserRouter>
         <div>
         <Routes>
@@ -30,6 +33,7 @@ function App() {
          </Routes>
         </div>
       </BrowserRouter>
+      </LoginContext.Provider>
     </>
   );
 }
