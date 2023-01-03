@@ -10,32 +10,37 @@ import AnalyticsPage from './Pages/ManagerPages/AnalyticsPage/AnalyticsPage';
 import WaiterLogin from './Pages/Login/WaiterLogin/WaiterLogin';
 import ManagerLogin from './Pages/Login/ManagerLogin/ManagerLogin';
 import FinishOrderPage from './Pages/WaiterPage/FinishOrderPage/FinishOrderPage';
-import LoginContext from "./Components/Login/PerfomeLogin";
+import LoginContext from "./Components/Login/LoginContext";
 import ManagerMainPage from './Pages/ManagerPages/ManagerMainPage/ManagerMainPage';
+import OrderContext from './Components/WaiterComponents/Order/OrderContext/OrderContext';
 
 function App() {
-  const [isAuth, setLogin] = useState(false);
-  const value = useMemo(() => ({ isAuth, setLogin }), [isAuth]);
+  const [login, setLogin] = useState(true);
+  const value = useMemo(() => ({ login, setLogin }), [login]);
+  const [food, setFood] = useState([]);
+  const array = useMemo(() => ({ food, setFood }), [food]);
   return (
     <>
-    <LoginContext.Provider value={value}>
-      <BrowserRouter>
-        <div>
-        <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/waiter_login" element={<WaiterLogin />} />
-            <Route path="/manager_login" element={<ManagerLogin />} />
-            <Route element={<ProtectedRoutes isAuth={isAuth} />}>
-              <Route path="/home_waiter" element={<MainPage />} />
-              <Route path="/home_manager" element={<ManagerMainPage />} />
-              <Route path="/order" element={<OrderPage />} />
-              <Route path="/order_create" element={<FinishOrderPage />} />
-              <Route path="/analytics" element={<AnalyticsPage />} />
-           </Route>        
-         </Routes>
-        </div>
-      </BrowserRouter>
-      </LoginContext.Provider>
+    <OrderContext.Provider value={array}>
+      <LoginContext.Provider value={value}>
+        <BrowserRouter>
+          <div>
+          <Routes>
+              <Route path="/" element={<LoginPage />} />
+              <Route path="/waiter_login" element={<WaiterLogin />} />
+              <Route path="/manager_login" element={<ManagerLogin />} />
+              <Route element={<ProtectedRoutes isAuth={login} />}>
+                <Route path="/home_waiter" element={<MainPage />} />
+                <Route path="/home_manager" element={<ManagerMainPage />} />
+                <Route path="/order" element={<OrderPage />} />
+                <Route path="/order_create" element={<FinishOrderPage />} />
+                <Route path="/analytics" element={<AnalyticsPage />} />
+            </Route>        
+          </Routes>
+          </div>
+        </BrowserRouter>
+        </LoginContext.Provider>
+      </OrderContext.Provider>
     </>
   );
 }

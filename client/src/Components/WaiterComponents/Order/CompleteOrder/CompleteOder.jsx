@@ -1,12 +1,15 @@
-import React, {useState} from 'react'
+import React, { useState, useContext } from 'react'
+import OrderContext from '../OrderContext/OrderContext';
 import './CompleteOrder.css';
 
 const CompleteOder = () => {
-  const URL: string = 'http://localhost:8080/api/v1/order';
+  const URL = 'http://localhost:8080/api/v1/order';
   const [recipient, setRecipient] = useState("");
   const [date, setDate] = useState("");
   const [content, setContent] = useState("");
-    let handleSubmit = async (e: any) => {
+  const { food } = useContext(OrderContext);
+  console.log(food);
+  let handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const body = JSON.stringify({
@@ -14,8 +17,12 @@ const CompleteOder = () => {
       date: date,
       content: content
     })
-      const requestHeaders: HeadersInit = new Headers();
-      requestHeaders.set('Content-Type', 'application/json');
+      // const requestHeaders: HeadersInit = new Headers();
+      // requestHeaders.set('Content-Type', 'application/json');
+      const requestHeaders = new Headers({
+        "Content-Type": "application/json",
+        "Content-Length": JSON.stringify(body).length
+      })
       console.log(JSON.stringify({
         content: content,
         date: date,
@@ -40,6 +47,11 @@ const CompleteOder = () => {
     <>
       <form className="order-complete-form" onSubmit={handleSubmit}>
         <h3>Order Details</h3>
+        {food.map((val, i) => (
+          <div key={i}>
+          <li>data in array: { val }</li>
+          </div>
+        ))}
         <label>Recipient</label>
         <input
         type="text"

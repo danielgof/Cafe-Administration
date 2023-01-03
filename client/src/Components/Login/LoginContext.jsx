@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 const LoginContext = createContext({
   isAuth: Boolean,
-  setLogin: (login: any) => {}
+  setLogin: (login) => {}
 });
 
 export default LoginContext;

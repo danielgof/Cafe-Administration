@@ -1,15 +1,24 @@
-import React, { useState, useEffect } from 'react';
-// import CloseButton from 'react-bootstrap/CloseButton';
+import React, { useState, useEffect, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
-// import logo from './FoodTypesImg/desserts.png';
+import AddOrder from '../AddOrder/AddOrder';
+import OrderContext from '../OrderContext/OrderContext';
 
-const FoodTypeCard = (props: any) => {
+const FoodTypeCard = (props) => {
   const [showAll, setShowAll] = useState(false);
   const [message, setMessage] = useState("");
   const toggleShowAll = () => setShowAll(!showAll);
   const [data, getData] = useState([])
+  const { food, setFood } = useContext(OrderContext);
+    const addData = () => {
+        let copy = Object.assign([], food);
+        copy.push('кот');
+        copy.push('на');
+        copy.push('крыше');
+        setFood(copy);
+        console.log(food);
+    }
   const URL = `http://localhost:8080/api/v1/food/${props.type}s`;
   useEffect(() => {
     fetchData()
@@ -58,12 +67,15 @@ const FoodTypeCard = (props: any) => {
                 <tr>
                 <th>Type</th>
                 <th>Title</th>
+                <th>Add to Cart</th>
                 </tr>
               </thead>
               {data.map((item, i) => (
                   <tr key={i}>
                     <td>{item["type"]}</td>
                     <td>{item["title"]}</td>
+                    {/* <td><AddOrder food={item["title"]}/></td> */}
+                    {/* <td><button className='add-item-to-cart' onClick={addData}>Add item to Cart</button></td> */}
                     <br></br>
                   </tr>
                 ))}

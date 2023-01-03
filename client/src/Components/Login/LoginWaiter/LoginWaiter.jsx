@@ -1,6 +1,6 @@
-import { useState, useContext, useMemo } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginContext from "../PerfomeLogin";
+import LoginContext from "../LoginContext";
 import './LoginWaiter.css';
 
 const LoginWaiter = () => {
@@ -8,22 +8,22 @@ const LoginWaiter = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuth, setLogin } = useContext(LoginContext);
-    const value = useMemo(() => ({ isAuth, setLogin }), [isAuth, setLogin]);
-
-    console.log(isAuth);
-    let handleSubmit = async (e: any) => {
+    const { login, setLogin } = useContext(LoginContext);
+    const clicker = () => {
+        setLogin(true);
+    }
+    let handleSubmit = async (e) => {
     e.preventDefault();
     try {
         const body = JSON.stringify({
         username: username,
         password: password})
-        // const requestHeaders = new Headers({
-        //     "Content-Type": "application/json",
-        //     "Content-Length": JSON.stringify(body).length
-        // })
-        const requestHeaders: HeadersInit = new Headers();
-        requestHeaders.set('Content-Type', 'application/json');
+        const requestHeaders = new Headers({
+            "Content-Type": "application/json",
+            "Content-Length": JSON.stringify(body).length
+        })
+        // const requestHeaders: HeadersInit = new Headers();
+        // requestHeaders.set('Content-Type', 'application/json');
         console.log(JSON.stringify({
             username: username,
             password: password}))
@@ -36,19 +36,17 @@ const LoginWaiter = () => {
         if (res.status === 200) {
             setUsername("");
             setPassword("");
-            setLogin(true);
-            console.log("isAuth value: ", isAuth);
+            clicker(true);
+            console.log(login);
             navigate("/home_waiter");
         } else {
-            setLogin(false); 
-            console.log("isAuth value: ", isAuth);
+
         }
     } catch (err) {
       console.log(err);
     }};
     return (
         <>
-        <LoginContext.Provider value={value}>
             <form className="login-waiter-form" onSubmit={handleSubmit}>
                 <h3>Waiter Login</h3>
                 <label>Username</label>
@@ -70,7 +68,6 @@ const LoginWaiter = () => {
 
                 <button className="login" type="submit">Login</button>
             </form>
-        </LoginContext.Provider>
         </>
     )
 }

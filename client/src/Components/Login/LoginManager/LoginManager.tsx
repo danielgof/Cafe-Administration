@@ -1,6 +1,7 @@
 import { useState, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginContext from "../PerfomeLogin";
+import LoginContext from "../LoginContext";
+import './LoginManager.css'
 
 const LoginManager = () => {
   const URL = 'http://localhost:8080/api/v1/auth';

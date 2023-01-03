@@ -4,9 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './DC.png';
 import { HiShoppingCart } from 'react-icons/hi';
-import { FiLogOut } from 'react-icons/fi';
 import { IconContext } from "react-icons";
 import './Header.css';
+import Logout from '../../Logout/Logout';
 
 const Header = () => {
   return (
@@ -29,13 +29,13 @@ const Header = () => {
               {/* <Nav.Link href="/analytics">Analytics</Nav.Link> */}
             </Nav>
             <Nav>
-              <Nav.Link href="order_create">
+              <Nav.Link href="/order_create">
                 <IconContext.Provider value={{ size: "100px",  className: "global-class-name" }}>
                   <HiShoppingCart />
                 </IconContext.Provider>
-                <IconContext.Provider value={{ size: "100px",  className: "global-class-name" }}>
-                  <FiLogOut />
-                </IconContext.Provider>
+              </Nav.Link>
+              <Nav.Link href="/">
+                <Logout />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -3,16 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from './DC.png';
-import { FiLogOut } from 'react-icons/fi';
-import { IconContext } from "react-icons";
 import './ManagerHeader.css';
+import Logout from '../../Logout/Logout';
 
 const ManagerHeader = () => {
   return (
     <>
       <Navbar fixed='top' className='header' expand="md">
         <Container>
-          <Navbar.Brand href="/home_waiter">
+          <Navbar.Brand href="/home_manager">
             <img 
               src={logo}
               height="45"
@@ -28,10 +27,8 @@ const ManagerHeader = () => {
               <Nav.Link href="/personal_managment">Personal Managment</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="order_create">
-                <IconContext.Provider value={{ size: "100px",  className: "global-class-name" }}>
-                  <FiLogOut />
-                </IconContext.Provider>
+              <Nav.Link href="/">
+                <Logout />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

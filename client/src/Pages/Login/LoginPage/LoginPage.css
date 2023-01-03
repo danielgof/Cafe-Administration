@@ -11,47 +11,29 @@ box-sizing: border-box;
   justify-content: center;
   align-items: center;
 }
-
-.login-page-title {
-    background-color: #d39767b7;
-    width: 430px;
-    height: 520px;
-    transform: translate(-50%,-50%);
-    left: 50%;
-    top: 50%;
-}
   
 .login-page-title {
-    text-align: center;
-    height: 120px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 15%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 50px 35px;
+  text-align: center;
+  height: 120px;
+  width: 400px;
+  background-color: #f7f7f7b7;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 15%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
 }
 .login-page-title *{
-    font-family: 'Poppins',sans-serif;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
+  font-family: 'Poppins',sans-serif;
+  color: #000000;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
 } 
-
-.login-waiter-btn {
-  background-color: #d39767b7;
-  width: 430px;
-  height: 520px;
-  transform: translate(-50%,-50%);
-  left: 50%;
-  top: 50%;
-}
 
 .background .shape{
   height: 200px;
@@ -63,7 +45,7 @@ box-sizing: border-box;
 .login-waiter-btn {
   height: 520px;
   width: 400px;
-  background-color: rgba(255,255,255,0.13);
+  background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
@@ -83,18 +65,9 @@ box-sizing: border-box;
 } 
 
 .login-manager-btn {
-  background-color: #d39767b7;
-  width: 430px;
-  height: 520px;
-  transform: translate(-50%,-50%);
-  left: 50%;
-  top: 50%;
-}
-
-.login-manager-btn {
   height: 520px;
   width: 400px;
-  background-color: rgba(255,255,255,0.13);
+  background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
   top: 50%;
@@ -105,6 +78,7 @@ box-sizing: border-box;
   box-shadow: 0 0 40px rgba(8,7,16,0.6);
   padding: 50px 35px;
 }
+
 .login-manager-btn *{
   font-family: 'Poppins',sans-serif;
   color: #ffffff;
@@ -150,26 +124,4 @@ button{
   font-weight: 600;
   border-radius: 5px;
   cursor: pointer;
-}
-.social{
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
 }
