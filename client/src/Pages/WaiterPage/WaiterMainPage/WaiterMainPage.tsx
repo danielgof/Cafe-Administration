@@ -1,9 +1,8 @@
-import React from 'react'
 import Header from '../../../Components/WaiterComponents/Header/Navbar';
 import './MainPage.css';
 import map from './plan.png';
 
-const MainPage = () => {
+const WaiterMainPage = () => {
   return (
     <>
       <Header />
@@ -12,4 +11,4 @@ const MainPage = () => {
     </>
   )
 }
-export default MainPage;
+export default WaiterMainPage;

@@ -1,13 +1,13 @@
 import React from 'react'
 import ManagerHeader from '../../../Components/ManagerComponents/Header/ManagerHeader';
-import './ManagerMainPage.css';
+import './PersonalPage.css';
 
-const ManagerMainPage = () => {
+const PersonalPage = () => {
   return (
     <>
       <ManagerHeader />
-      <h1 className='manager-main-page-title'>Manager Main Page</h1>
+      <p className='personalpage-page-title'>Personal Page</p>
     </>
   )
 }
-export default ManagerMainPage;
+export default PersonalPage;
