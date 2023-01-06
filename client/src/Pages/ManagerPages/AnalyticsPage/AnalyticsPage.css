@@ -15,13 +15,13 @@
 }
 
 .visitors-number {
-    height: 350px;
-    width: 580px;
+    height: 50%;
+    width: 40%;
     background-color: #f7f7f7b7;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
-    left: 20%;
+    top: 60%;
+    left: 24%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
@@ -31,13 +31,13 @@
 }
 
 .clients-statisfaction {
-    height: 350px;
-    width: 580px;
+    height: 50%;
+    width: 40%;
     background-color: #f7f7f7b7;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
-    left: 80%;
+    top: 60%;
+    left: 75%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);

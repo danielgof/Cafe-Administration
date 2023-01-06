@@ -14,8 +14,8 @@ box-sizing: border-box;
   
 .login-page-title {
   text-align: center;
-  height: 120px;
-  width: 400px;
+  height: 7%;
+  width: 18%;
   background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -28,6 +28,8 @@ box-sizing: border-box;
   padding: 50px 35px;
 }
 .login-page-title *{
+  width: auto;
+  height: 3%;
   font-family: 'Poppins',sans-serif;
   color: #000000;
   letter-spacing: 0.5px;
@@ -43,8 +45,8 @@ box-sizing: border-box;
 }
 
 .login-waiter-btn {
-  height: 520px;
-  width: 400px;
+  height: 30%;
+  width: 30%;
   background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -65,8 +67,8 @@ box-sizing: border-box;
 } 
 
 .login-manager-btn {
-  height: 520px;
-  width: 400px;
+  height: 30%;
+  width: 30%;
   background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);

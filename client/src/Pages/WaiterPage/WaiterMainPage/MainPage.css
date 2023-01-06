@@ -14,8 +14,8 @@ box-sizing: border-box;
 }
 
 .waiter-main-page-title {
-    height: 90px;
-    width: 300px;
+    height: 5%;
+    width: 20%;
     background-color: #f7f7f7b7;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -37,8 +37,8 @@ box-sizing: border-box;
 }
 
 .waiter-main-page-map {
-    height: 620px;
-    width: 800px;
+    height: 65%;
+    width: 50%;
     background-color: #f7f7f7b7;
     position: absolute;
     transform: translate(-50%,-50%);
