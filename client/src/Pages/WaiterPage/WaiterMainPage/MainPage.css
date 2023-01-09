@@ -14,7 +14,7 @@ box-sizing: border-box;
 }
 
 .waiter-main-page-title {
-    height: 5%;
+    height: 1%;
     width: 20%;
     background-color: #f7f7f7b7;
     position: absolute;
@@ -38,11 +38,11 @@ box-sizing: border-box;
 
 .waiter-main-page-map {
     height: 65%;
-    width: 50%;
+    width: 45%;
     background-color: #f7f7f7b7;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 60%;
+    top: 65%;
     left: 50%;
     border-radius: 10px;
     backdrop-filter: blur(10px);

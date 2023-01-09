@@ -6,12 +6,6 @@ margin: 0;
 box-sizing: border-box;
 }
 
-.background .shape{
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  border-radius: 50%;
-}
 
 .login-waiter-form {
   height: 520px;
@@ -29,13 +23,17 @@ box-sizing: border-box;
 }
 
 .login-waiter-form *{
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000000;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
+  color: #000;
 }
 
+.login-waiter-form input {
+  color: #000;
+}
 form h3{
   font-size: 32px;
   font-weight: 500;
@@ -61,7 +59,7 @@ input{
   font-weight: 300;
 }
 ::placeholder{
-  color: #e5e5e5;
+  color: #000000;
 }
 button{
   margin-top: 50px;
