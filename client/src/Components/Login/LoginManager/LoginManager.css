@@ -6,15 +6,6 @@ margin: 0;
 box-sizing: border-box;
 }
 
-/* .login-manager-form {
-  background-color: #aa7a52b7;
-  width: 430px;
-  height: 520px;
-  transform: translate(-50%,-50%);
-  left: 50%;
-  top: 50%;
-} */
-
 .background .shape{
   height: 200px;
   width: 200px;
@@ -23,8 +14,8 @@ box-sizing: border-box;
 }
 
 .login-manager-form {
-  height: 520px;
-  width: 400px;
+  height: 70%;
+  width: 30%;
   background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -34,8 +25,8 @@ box-sizing: border-box;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255,255,255,0.1);
   box-shadow: 0 0 40px rgba(8,7,16,0.6);
-  padding: 50px 35px;
 }
+
 .login-manager-form *{
   font-family: 'Poppins',sans-serif;
   color: #000000;
