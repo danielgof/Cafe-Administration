@@ -1,9 +1,9 @@
 package sever.repo;
 
-import sever.domain.AuthRole;
+import sever.domain.ModelAuthRole;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoleRepo extends JpaRepository<AuthRole, Long> {
-    AuthRole findByName(String name);
+public interface RoleRepo extends JpaRepository<ModelAuthRole, Long> {
+    ModelAuthRole findByName(String name);
 }

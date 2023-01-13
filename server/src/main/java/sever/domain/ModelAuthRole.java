@@ -13,8 +13,8 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthRole {
-    public AuthRole(String name) {
+public class ModelAuthRole {
+    public ModelAuthRole(String name) {
         this.name = name;
     }
 

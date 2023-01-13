@@ -1,9 +1,7 @@
 package sever;
 
-import sever.domain.AuthRole;
-import sever.domain.AuthUser;
-import sever.domain.ModelFood;
-import sever.domain.ModelOrder;
+import sever.domain.*;
+import sever.service.EmployeeService;
 import sever.service.FoodService;
 import sever.service.OrderService;
 import sever.service.UserService;
@@ -15,7 +13,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 @SpringBootApplication
 public class Application {
@@ -32,17 +29,18 @@ public class Application {
     @Bean
     CommandLineRunner run(UserService userService,
                           FoodService foodService,
-                          OrderService orderService
+                          OrderService orderService,
+                          EmployeeService employeeService
     ) {
         return args -> {
-            userService.saveRole(new AuthRole("ROLE_ADMIN"));
-            userService.saveRole(new AuthRole("ROLE_WAITER"));
-            userService.saveRole(new AuthRole("ROLE_MANAGER"));
+            userService.saveRole(new ModelAuthRole("ROLE_ADMIN"));
+            userService.saveRole(new ModelAuthRole("ROLE_WAITER"));
+            userService.saveRole(new ModelAuthRole("ROLE_MANAGER"));
 
-            userService.saveUser(new AuthUser("John", "Falckon", "02.03.1977", "john3", "1234", new ArrayList<>()));
-            userService.saveUser(new AuthUser("David","Buzzle", "09.12.1989",  "dv44", "1234", new ArrayList<>()));
-            userService.saveUser(new AuthUser("Ross", "Geller", "04.08.1970", "user", "1234", new ArrayList<>()));
-            userService.saveUser(new AuthUser("Chandler", "Bing", "07.09.1970", "chb", "1234", new ArrayList<>()));
+            userService.saveUser(new ModelAuthUser("John", "Falckon", "02.03.1977", "john3", "1234", new ArrayList<>()));
+            userService.saveUser(new ModelAuthUser("David","Buzzle", "09.12.1989",  "dv44", "1234", new ArrayList<>()));
+            userService.saveUser(new ModelAuthUser("Ross", "Geller", "04.08.1970", "user", "1234", new ArrayList<>()));
+            userService.saveUser(new ModelAuthUser("Chandler", "Bing", "07.09.1970", "chb", "1234", new ArrayList<>()));
 
             userService.addRoleToUser("john3", "ROLE_WAITER");
             userService.addRoleToUser("dv44", "ROLE_WAITER");
@@ -88,7 +86,10 @@ public class Application {
             foodService.saveFood(new ModelFood("steak", "ribeye steak"));
             foodService.saveFood(new ModelFood("steak", "strip steak"));
 
-            orderService.saveOrder(new ModelOrder("aaaaaaa", "aaaa", "aaaa"));
+            orderService.saveOrder(new ModelOrder("saaaaaaa", "aaaa", "aaaa"));
+
+            employeeService.saveEmployee(new ModelEmployee("Jack", "Barker", "2.09.1999", new ArrayList<>()));
+            employeeService.saveEmployee(new ModelEmployee("Daniel", "Hofman", "01.03.2001", new ArrayList<>()));
         };
     }
 }

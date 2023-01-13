@@ -12,7 +12,7 @@ import java.util.Collection;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthUser {
+public class ModelAuthUser {
     @Id
     @SequenceGenerator(
             name = "authuser_sequence",
@@ -30,10 +30,10 @@ public class AuthUser {
     private String username;
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    private Collection<AuthRole> roles = new ArrayList<>();
+    private Collection<ModelAuthRole> roles = new ArrayList<>();
 
-    public AuthUser(String name, String lastname, String dob,
-                    String username, String password, Collection<AuthRole> roles) {
+    public ModelAuthUser(String name, String lastname, String dob,
+                         String username, String password, Collection<ModelAuthRole> roles) {
         this.name = name;
         this.username = username;
         this.password = password;

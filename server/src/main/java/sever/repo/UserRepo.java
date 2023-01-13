@@ -1,8 +1,8 @@
 package sever.repo;
 
-import sever.domain.AuthUser;
+import sever.domain.ModelAuthUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<AuthUser, Long> {
-    AuthUser findByUsername(String username);
+public interface UserRepo extends JpaRepository<ModelAuthUser, Long> {
+    ModelAuthUser findByUsername(String username);
 }

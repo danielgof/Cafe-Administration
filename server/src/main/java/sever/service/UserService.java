@@ -1,15 +1,15 @@
 package sever.service;
 
-import sever.domain.AuthUser;
-import sever.domain.AuthRole;
+import sever.domain.ModelAuthUser;
+import sever.domain.ModelAuthRole;
 
 
 import java.util.List;
 
 public interface UserService {
-    AuthUser saveUser(AuthUser user);
-    AuthRole saveRole(AuthRole role);
+    ModelAuthUser saveUser(ModelAuthUser user);
+    ModelAuthRole saveRole(ModelAuthRole role);
     void addRoleToUser(String username, String rolename);
-    AuthUser getUser(String username);
-    List<AuthUser> getUsers();
+    ModelAuthUser getUser(String username);
+    List<ModelAuthUser> getUsers();
 }

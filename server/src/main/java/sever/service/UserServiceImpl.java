@@ -1,7 +1,7 @@
 package sever.service;
 
-import sever.domain.AuthRole;
-import sever.domain.AuthUser;
+import sever.domain.ModelAuthRole;
+import sever.domain.ModelAuthUser;
 import sever.repo.RoleRepo;
 import sever.repo.UserRepo;
 import lombok.RequiredArgsConstructor;
@@ -30,38 +30,38 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     @Transactional
-    public AuthUser saveUser(AuthUser user) {
+    public ModelAuthUser saveUser(ModelAuthUser user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepo.save(user);
     }
 
     @Override
     @Transactional
-    public AuthRole saveRole(AuthRole role) {
+    public ModelAuthRole saveRole(ModelAuthRole role) {
         return roleRepo.save(role);
     }
 
     @Override
     @Transactional
     public void addRoleToUser(String username, String rolename) {
-        AuthUser user = userRepo.findByUsername(username);
-        AuthRole role = roleRepo.findByName(rolename);
+        ModelAuthUser user = userRepo.findByUsername(username);
+        ModelAuthRole role = roleRepo.findByName(rolename);
         user.getRoles().add(role);
     }
 
     @Override
-    public AuthUser getUser(String username) {
+    public ModelAuthUser getUser(String username) {
         return userRepo.findByUsername(username);
     }
 
     @Override
-    public List<AuthUser> getUsers() {
+    public List<ModelAuthUser> getUsers() {
         return userRepo.findAll();
     }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AuthUser user = userRepo.findByUsername(username);
+        ModelAuthUser user = userRepo.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found in database");
         }

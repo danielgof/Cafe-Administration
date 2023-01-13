@@ -6,11 +6,10 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import sever.api.utils.RoleToUser;
-import sever.domain.AuthRole;
-import sever.domain.AuthUser;
+import sever.domain.ModelAuthRole;
+import sever.domain.ModelAuthUser;
 import sever.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,18 +32,18 @@ public class UserResourse {
     private final UserService userService;
 
     @GetMapping("/users")
-    public ResponseEntity<List<AuthUser>> getUser() {
+    public ResponseEntity<List<ModelAuthUser>> getUser() {
         return ResponseEntity.ok().body(userService.getUsers());
     }
 
     @PostMapping("/user/save")
-    public ResponseEntity<AuthUser> saveUser(@RequestBody AuthUser authUser) {
+    public ResponseEntity<ModelAuthUser> saveUser(@RequestBody ModelAuthUser authUser) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/user/save").toUriString());
         return ResponseEntity.created(uri).body(userService.saveUser(authUser));
     }
 
     @PostMapping("/role/save")
-    public ResponseEntity<AuthRole> saveUser(@RequestBody AuthRole authRole) {
+    public ResponseEntity<ModelAuthRole> saveUser(@RequestBody ModelAuthRole authRole) {
         URI uri = URI.create(ServletUriComponentsBuilder.fromCurrentContextPath().path("api/role/save").toUriString());
         return ResponseEntity.created(uri).body(userService.saveRole(authRole));
     }
@@ -65,12 +64,12 @@ public class UserResourse {
                 JWTVerifier verifier = JWT.require(algorithm).build();
                 DecodedJWT decodedJWT = verifier.verify(refresh_token);
                 String username = decodedJWT.getSubject();
-                AuthUser user = userService.getUser(username);
+                ModelAuthUser user = userService.getUser(username);
                 String access_token = JWT.create()
                         .withSubject(user.getUsername())
                         .withExpiresAt(new Date(System.currentTimeMillis() + 10*60*1000))
                         .withIssuer(request.getRequestURL().toString())
-                        .withClaim("roles", user.getRoles().stream().map(AuthRole::getName).collect(Collectors.toList()))
+                        .withClaim("roles", user.getRoles().stream().map(ModelAuthRole::getName).collect(Collectors.toList()))
                         .sign(algorithm);
                 Map<String,String> tokens = new HashMap<>();
                 tokens.put("access_token",access_token);
