@@ -28,13 +28,17 @@ public class ModelEmployee {
     private String Lastname;
     private String Name;
     private String dob;
-    @OneToMany(fetch = FetchType.EAGER)
-    private Collection<ModelPhonenumber> phonenumbers = new ArrayList<>();
+//    @OneToMany(fetch = FetchType.EAGER)
+//    private Collection<ModelPhonenumber> phonenumbers = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    private Collection<ModelPosition> positions = new ArrayList<>();
     public ModelEmployee(String Lastname, String Name,
-                         String dob, Collection<ModelPhonenumber> phonenumbers) {
+                         String dob,
+                         Collection<ModelPosition> positions) {
         this.Lastname = Lastname;
         this.Name = Name;
         this.dob = dob;
-        this.phonenumbers = phonenumbers;
+
+        this.positions = positions;
     }
 }

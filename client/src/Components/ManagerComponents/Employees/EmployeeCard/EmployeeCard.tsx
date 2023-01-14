@@ -3,18 +3,14 @@ import CloseButton from 'react-bootstrap/CloseButton';
 import Button from 'react-bootstrap/Button';
 import Toast from 'react-bootstrap/Toast';
 import Card from 'react-bootstrap/Card';
-import UpdPhonenum from '../UpdPhonenum/UpdPhonenum';
-import DeletePhone from '../DeletePhone/DeletePhone';
 import './EmployeeCard.css';
 
 const EmployeeCard = (props: any) => {
     const [showA, setShowA] = useState(false);
     const [showB, setShowB] = useState(false);
-    const [showC, setShowC] = useState(false);
     const [message, setMessage] = useState("");
     const toggleShowA = () => setShowA(!showA);
     const toggleShowB = () => setShowB(!showB);
-    const toggleShowC = () => setShowC(!showC);
     const handleClick = async (e: any) => {
       e.preventDefault();
       try {
@@ -58,25 +54,21 @@ const EmployeeCard = (props: any) => {
                 <img src="https://eu.ui-avatars.com/api/?name=John+Doe&size=150" alt="avatar"/>
               </div>
               <div className='person-card-maindata'>
-                Должность: {props.position}
+                Position: {props.position}
                 <br />
-                Имя: {props.name}
+                Name: {props.name}
                 <br />
-                Фамилия: {props.lastname}
+                Lastname: {props.lastname}
               </div>
             </div>
           </Card.Text>
             <Button className='btn-dop-info'
               onClick={toggleShowA}>
-              Дополнительная информация
+              Additional ingo
             </Button>
             <Button className='btn-dop-info'
               onClick={toggleShowB}>
-              Изменить информацию пользователю
-            </Button>
-            <Button className='btn-dop-info'
-              onClick={toggleShowC}>
-              Добавить телефон пользователю
+              Change user's info
             </Button>
             <Toast className='person-show-dop-info' show={showA} onClose={toggleShowA}>
               <Toast.Header>
@@ -85,38 +77,13 @@ const EmployeeCard = (props: any) => {
                   className="rounded me-2"
                   alt=""
                 />
-                <strong className="me-auto">Доп.инфа</strong>
+                <strong className="me-auto">Additional info</strong>
               </Toast.Header>
               <Toast.Body>
-                Зарплата: {props.salary}
+                Salary: {props.salary}
                 <br />
-                Отдел: {props.department}
+                Department: {props.department}
                 <br />
-                Номера телефона: 
-                {props.phone.map((phone: any, i: any) => (
-                  <div className='person-card-phone' key={i}>
-                    <table className='telephones-data'>
-                    <thead>
-                      <tr>
-                      <th>Телефон</th>
-                      <th>Ввод нового телефона</th>
-                      <th>Удаление</th>
-                      </tr>
-                    </thead>
-                      <tr>
-                        <td>
-                          +7{phone} 
-                        </td>
-                        <td>
-                          <UpdPhonenum phone={phone}/>
-                        </td>
-                        <td>
-                          <DeletePhone className='person-card-phone-del-btn' phone={phone}/>
-                        </td>
-                      </tr>
-                    </table>
-                  </div>
-                ))}
               </Toast.Body>
             </Toast>
             {/* <Toast className='person-change-info' show={showB} onClose={toggleShowB}>
@@ -133,19 +100,6 @@ const EmployeeCard = (props: any) => {
                 <UpdLastname id={props.id}/>
                
                 <UpdUserPosition id={props.id}/>
-              </Toast.Body>
-            </Toast> */}
-            {/* <Toast className='phone-to-user' show={showC} onClose={toggleShowC}>
-              <Toast.Header>
-                <img
-                  src="holder.js/20x20?text=%20"
-                  className="rounded me-2"
-                  alt=""
-                />
-                <strong className="me-auto">Добавить телефон пользователю</strong>
-              </Toast.Header>
-              <Toast.Body>
-                <AddPhoneToUser id={props.id}/>
               </Toast.Body>
             </Toast> */}
         </Card.Body>

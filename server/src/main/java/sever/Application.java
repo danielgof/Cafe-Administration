@@ -1,10 +1,7 @@
 package sever;
 
 import sever.domain.*;
-import sever.service.EmployeeService;
-import sever.service.FoodService;
-import sever.service.OrderService;
-import sever.service.UserService;
+import sever.service.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,7 +27,8 @@ public class Application {
     CommandLineRunner run(UserService userService,
                           FoodService foodService,
                           OrderService orderService,
-                          EmployeeService employeeService
+                          EmployeeService employeeService,
+                          PositionService positionService
     ) {
         return args -> {
             userService.saveRole(new ModelAuthRole("ROLE_ADMIN"));
@@ -88,14 +86,17 @@ public class Application {
 
             orderService.saveOrder(new ModelOrder("saaaaaaa", "aaaa", "aaaa"));
 
-            employeeService.saveEmployee(new ModelEmployee("Jack", "Barker", "02.09.1999", new ArrayList<>()));
+            employeeService.saveEmployee(new ModelEmployee("Jack", "Barker", "02.09.1999",  new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Daniel", "Hofman", "01.03.2001", new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Grey", "Katie", "10.09.1979", new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Grey", "Josh", "01.03.2000", new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Jack", "Mind", "09.09.1987", new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Daniel", "Bucci", "01.03.2002", new ArrayList<>()));
             employeeService.saveEmployee(new ModelEmployee("Jack", "Lower", "02.09.1990", new ArrayList<>()));
-            employeeService.saveEmployee(new ModelEmployee("Daniel", "Jacob", "09.03.2003", new ArrayList<>()));
+            employeeService.saveEmployee(new ModelEmployee("Daniel", "Jacob", "09.03.2003",  new ArrayList<>()));
+
+            positionService.savePosition(new ModelPosition("Cloud Storage", "SE"));
+            employeeService.addPositionToEmployee(1l, 1L);
         };
     }
 }

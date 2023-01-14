@@ -8,7 +8,7 @@ const AnalyticsPage = () => {
   return (
     <>
       <ManagerHeader />
-      <h1 className='analytics-page-title'>AnalyticsPage</h1>
+      {/* <h1 className='analytics-page-title'>AnalyticsPage</h1> */}
       <div className='visitors-number'>
         <NumverOfVisitors />
       </div>

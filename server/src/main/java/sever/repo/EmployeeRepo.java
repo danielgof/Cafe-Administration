@@ -7,4 +7,6 @@ import sever.domain.ModelEmployee;
 import java.util.Optional;
 
 public interface EmployeeRepo extends JpaRepository<ModelEmployee, Long> {
+    @Query("select e from ModelEmployee e where e.id=?1")
+    ModelEmployee find(Long id);
 }

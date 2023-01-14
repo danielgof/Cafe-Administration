@@ -1,18 +1,29 @@
+.container {
+    width: 80%;
+}
+
 .text-card {
     text-align: left;
-    background-color: rgb(199, 218, 235);
+    background-color: #f7f7f7b7;
     /* box-shadow: 0px 0px 5px rgb(37, 108, 223);
     border-color: rgb(37, 108, 223); */
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     text-shadow: 5px;
 }
 
 .btn-dop-info {
+    color: rgb(0, 0, 0);
     text-align: left;
-    background-color: rgb(199, 218, 235);
+    background-color: #f7f7f7b7;
     border-radius: 8px;
     box-shadow: 5px;
     border-color: aliceblue;
+}
+
+.btn-dop-info:hover {
+    background-color: #F4FFDC;
+    color: #000;
+    border-color: rgba(255,255,255,0.1);
 }
 
 .delete-person {
@@ -29,8 +40,9 @@
 }
 
 .container.card {
-    box-shadow: 0px 0px 5px rgb(37, 108, 223);
-    text-align:center;
+    box-shadow: 0px 0px 5px rgb#f7f7f7b7;
+    text-align: left;
+    width: 800px;
 }
 
 .person-card-img-container {
