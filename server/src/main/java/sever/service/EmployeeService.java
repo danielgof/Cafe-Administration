@@ -10,4 +10,5 @@ public interface EmployeeService {
     List<ModelEmployee> getAllEmployees();
     ModelEmployee saveEmployee(ModelEmployee employee);
     void addPositionToEmployee(Long employee_id, Long positionId);
+    ModelEmployee deletePostion(Long employee_id, Long positionId);
 }

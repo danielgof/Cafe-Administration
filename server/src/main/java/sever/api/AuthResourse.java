@@ -52,7 +52,7 @@ public class AuthResourse {
     public ResponseEntity registerWaiter(@RequestBody ModelAuthUser authUser) {
         userService.saveUser(authUser);
         userService.addRoleToUser(authUser.getUsername(), "ROLE_WAITER");
-        log.info("пользователь с именем {} был добавлен в базу данных", authUser.getUsername());
+//        log.info("польз {} был добавлен в базу данных", authUser.getUsername());
         return ResponseEntity.ok().body(authUser);
     }
 
@@ -60,7 +60,7 @@ public class AuthResourse {
     public ResponseEntity registerManager(@RequestBody ModelAuthUser authUser) {
         userService.saveUser(authUser);
         userService.addRoleToUser(authUser.getUsername(), "ROLE_MANAGER");
-        log.info("пользователь с именем {} был добавлен в базу данных", authUser.getUsername());
+//        log.info("пользователь с именем {} был добавлен в базу данных", authUser.getUsername());
         return ResponseEntity.ok().body(authUser);
     }
 }

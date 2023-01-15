@@ -36,4 +36,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         ModelPosition position = positionRepo.find(positionId);
         employee.getPositions().add(position);
     }
+
+    @Override
+    public ModelEmployee deletePostion(Long employee_id, Long positionId) {
+        return null;
+    }
 }
