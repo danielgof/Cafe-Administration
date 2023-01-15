@@ -1,4 +1,4 @@
-# Pet Project "Rainbow Cafe Software"
+# Pet Project "Cafe Software"
 
 
 ### client
