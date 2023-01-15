@@ -6,25 +6,26 @@ const CompleteOder = () => {
   const URL = 'http://localhost:8080/api/v1/order';
   const [recipient, setRecipient] = useState("");
   const [date, setDate] = useState("");
-  const [content, setContent] = useState("");
-  const { food } = useContext(OrderContext);
+  // const [content, setContent] = useState("");
+  // const { food } = useContext(OrderContext);
+  const food = ["", "", ""];
+  // const recipient = "";
+  // const date = "";
   console.log(food);
-  let handleSubmit = async (e) => {
+  let handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
       const body = JSON.stringify({
       recipient: recipient,
-      date: date,
-      content: content
+      date: date
     })
-      // const requestHeaders: HeadersInit = new Headers();
-      // requestHeaders.set('Content-Type', 'application/json');
-      const requestHeaders = new Headers({
-        "Content-Type": "application/json",
-        "Content-Length": JSON.stringify(body).length
-      })
+      const requestHeaders: HeadersInit = new Headers();
+      requestHeaders.set('Content-Type', 'application/json');
+      // const requestHeaders = new Headers({
+      //   "Content-Type": "application/json",
+      //   "Content-Length": JSON.stringify(body).length
+      // })
       console.log(JSON.stringify({
-        content: content,
         date: date,
         recipient: recipient
       }))
@@ -35,9 +36,9 @@ const CompleteOder = () => {
             body: body
         });
         if (res.status === 200) {
-          setRecipient("");
-          setDate("");
-          setContent("");
+          // setRecipient("");
+          // setDate("");
+          // setContent("");
         } else {
         }
     } catch (err) {
@@ -47,11 +48,6 @@ const CompleteOder = () => {
     <>
       <form className="order-complete-form" onSubmit={handleSubmit}>
         <h3>Order Details</h3>
-        {food.map((val, i) => (
-          <div key={i}>
-          <li>data in array: { val }</li>
-          </div>
-        ))}
         <label>Recipient</label>
         <input
         type="text"
@@ -69,13 +65,18 @@ const CompleteOder = () => {
         onChange={(e) => setDate(e.target.value)}
         />
         <label>Content</label>
-        <input
+        {/* <input
         type="text"
         value={content}
         placeholder="content"
         id="content"
         onChange={(e) => setContent(e.target.value)}
-        />
+        /> */}
+        {food.map((val, i) => (
+          <div key={i}>
+          <li>data in array: { val }</li>
+          </div>
+        ))}
 
         <button className="send-order" type="submit">Complete Order</button>
       </form>

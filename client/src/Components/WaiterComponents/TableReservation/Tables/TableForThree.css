@@ -1,0 +1,16 @@
+.table-three {
+    fill: #d39767b7;
+    stroke: #826751b7;
+}
+
+.circle {
+    display: flex;
+    width: 17%;
+    height: 30%;
+    background-color: #d39767b7;
+    border-radius: 50%;
+}
+
+.text {
+    margin: auto;
+}
