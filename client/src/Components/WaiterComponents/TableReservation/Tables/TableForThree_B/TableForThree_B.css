@@ -3,10 +3,10 @@
     stroke: #826751b7;
 }
 
-.circle {
+.circleB {
     display: flex;
-    width: 17%;
-    height: 30%;
+    width: 80px;
+    height: 80px;
     background-color: #d39767b7;
     border-radius: 50%;
 }

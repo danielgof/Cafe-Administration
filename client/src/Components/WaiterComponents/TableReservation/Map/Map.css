@@ -19,3 +19,27 @@
     outline: none;
     border: none;
 } 
+
+.table-a {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 70%;
+    left: 60%;
+}
+
+.table-b {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 20%;
+    left: 60%;
+}
+
+.table-c {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 45%;
+    left: 35%;
+}
