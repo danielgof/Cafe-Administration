@@ -1,8 +1,7 @@
-import React from 'react'
 import TableForThree_A from '../Tables/TableForThree_A/TableForThree_A';
 import TableForThree_B from '../Tables/TableForThree_B/TableForThree_B';
 import TableForThree_C from '../Tables/TableForThree_C/TableForThree_C';
-// import { ReactComponent as Table } from './table.drawio.svg';
+import TableForTwo_A from '../Tables/TableForTwo_A/TableForTwo_A';
 import './Map.css';
 
 const Map = () => {
@@ -17,6 +16,9 @@ const Map = () => {
         </div>
         <div className='table-c'>
           <TableForThree_C />
+        </div>
+        <div className='table-for-two-a'>
+          <TableForTwo_A />
         </div>
       </div>
     </>

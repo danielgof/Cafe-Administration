@@ -1,6 +1,6 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginContext from "../LoginContext";
+import { setLoginContext } from "../LoginContext";
 import './LoginWaiter.css';
 
 const LoginWaiter = () => {
@@ -8,10 +8,7 @@ const LoginWaiter = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login, setLogin } = useContext(LoginContext);
-    const clicker = () => {
-        setLogin(true);
-    }
+    
     let handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -36,8 +33,7 @@ const LoginWaiter = () => {
         if (res.status === 200) {
             setUsername("");
             setPassword("");
-            clicker(true);
-            console.log(login);
+            setLoginContext({isAuth : true})
             navigate("/home_waiter");
         } else {
 

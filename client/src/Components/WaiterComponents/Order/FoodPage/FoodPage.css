@@ -1,3 +1,15 @@
 .block {
     margin-top: 8%;
 }
+
+.pagination li {
+    --bs-pagination-active-color: rgb(0, 0, 0);
+    --bs-pagination-active-bg: #F4FFDC;
+    --bs-pagination-color:rgb(0, 0, 0);
+}
+
+.pagination:hover li {
+    --bs-pagination-active-color: rgb(0, 0, 0);
+    --bs-pagination-active-bg: #F4FFDC;
+    --bs-pagination-color:rgb(0, 0, 0);
+}

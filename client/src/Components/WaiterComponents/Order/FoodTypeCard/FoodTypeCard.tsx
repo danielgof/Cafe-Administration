@@ -5,20 +5,20 @@ import Card from 'react-bootstrap/Card';
 import AddOrder from '../AddOrder/AddOrder';
 import OrderContext from '../OrderContext/OrderContext';
 
-const FoodTypeCard = (props) => {
+const FoodTypeCard = (props: any) => {
   const [showAll, setShowAll] = useState(false);
   const [message, setMessage] = useState("");
   const toggleShowAll = () => setShowAll(!showAll);
   const [data, getData] = useState([])
-  const { food, setFood } = useContext(OrderContext);
-    const addData = () => {
-        let copy = Object.assign([], food);
-        copy.push('кот');
-        copy.push('на');
-        copy.push('крыше');
-        setFood(copy);
-        console.log(food);
-    }
+  // const { food, setFood } = useContext(OrderContext);
+    // const addData = () => {
+    //     let copy = Object.assign([], food);
+    //     copy.push('кот');
+    //     copy.push('на');
+    //     copy.push('крыше');
+    //     // setFood(copy);
+    //     // console.log(food);
+    // }
   const URL = `http://localhost:8080/api/v1/food/${props.type}s`;
   useEffect(() => {
     fetchData()
@@ -50,7 +50,7 @@ const FoodTypeCard = (props) => {
         </Card.Text>
           <Button className='btn-dop-info'
             onClick={toggleShowAll}>
-            Дополнительная информация
+            All information
           </Button>
           <Toast show={showAll} onClose={toggleShowAll}>
             <Toast.Header>
@@ -59,7 +59,7 @@ const FoodTypeCard = (props) => {
                 className="rounded me-2"
                 alt=""
               />
-              <strong className="me-auto">Доп.инфа</strong>
+              <strong className="me-auto">All info</strong>
             </Toast.Header>
             <Toast.Body>
             <table className='table-positions'>

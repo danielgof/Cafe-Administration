@@ -1,6 +1,6 @@
 import { useState, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import LoginContext from "../LoginContext";
+// import LoginContext from "../LoginContext";
 import './LoginManager.css'
 
 const LoginManager = () => {
@@ -8,10 +8,10 @@ const LoginManager = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { isAuth, setLogin } = useContext(LoginContext);
-    const value = useMemo(() => ({ isAuth, setLogin }), [isAuth, setLogin]);
+    // const { isAuth, setLogin } = useContext(LoginContext);
+    // const value = useMemo(() => ({ isAuth, setLogin }), [isAuth, setLogin]);
 
-    console.log(isAuth);
+    // console.log(isAuth);
     let handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -36,19 +36,18 @@ const LoginManager = () => {
         if (res.status === 200) {
             setUsername("");
             setPassword("");
-            setLogin(true);
-            console.log("isAuth value: ", isAuth);
+            // setLogin(true);
+            // console.log("isAuth value: ", isAuth);
             navigate("/home_manager");
         } else {
-            setLogin(false); 
-            console.log("isAuth value: ", isAuth);
+            // setLogin(false); 
+            // console.log("isAuth value: ", isAuth);
         }
     } catch (err) {
       console.log(err);
     }};
     return (
         <>
-        <LoginContext.Provider value={value}>
             <form className="login-manager-form" onSubmit={handleSubmit}>
                 <h3>Manager Login</h3>
                 <label>Username</label>
@@ -70,8 +69,7 @@ const LoginManager = () => {
 
                 <button className="login" type="submit">Login</button>
             </form>
-        </LoginContext.Provider>
-    </>
+        </>
   )
 }
 export default LoginManager;

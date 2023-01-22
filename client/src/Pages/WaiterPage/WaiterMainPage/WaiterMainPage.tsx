@@ -1,15 +1,17 @@
 import Header from '../../../Components/WaiterComponents/Header/Navbar';
-import Map from '../../../Components/WaiterComponents/TableReservation/Map/Map';
-import './MainPage.css';
-// import map from './plan.png';
+import logo from './DC.png';
+import './WaiterMainPage.css';
 
 const WaiterMainPage = () => {
   return (
     <>
       <Header />
-      {/* <p className='waiter-main-page-title'>Main Page</p> */}
-      <Map />
-      {/* <img className='waiter-main-page-map' src={map}/> */}
+      <div className='logo-cafe'> 
+        <img 
+          src={logo}
+          // className="d-inline-block align-top"
+          alt="Logo"/>
+      </div>
     </>
   )
 }

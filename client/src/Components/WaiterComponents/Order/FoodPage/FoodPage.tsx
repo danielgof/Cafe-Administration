@@ -5,13 +5,13 @@ import './FoodPage.css';
 // import FoodTypeCard from '../FoodTypeCard/FoodTypeCard';
 
 const FoodPage = ({ itemsPerPage }: any) => {
-    const [data, getData] = useState([])
-    const URL = 'http://localhost:8080/api/v1/food/types';
-    // const requestHeaders: HeadersInit = new Headers();
-    // requestHeaders.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMyIsInJvbGVzIjpbXSwiZXhwIjoxNjcxODc1NjM2fQ.QtHKF_JJEyhQLDM_2PMavVuFxNzgPwzkk7ZjCKFHoqA');
-    useEffect(() => {
-      fetchData()
-    }, [])
+  const [data, getData] = useState([])
+  const URL = 'http://localhost:8080/api/v1/food/types';
+  // const requestHeaders: HeadersInit = new Headers();
+  // requestHeaders.set('Authorization', 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huMyIsInJvbGVzIjpbXSwiZXhwIjoxNjcxODc1NjM2fQ.QtHKF_JJEyhQLDM_2PMavVuFxNzgPwzkk7ZjCKFHoqA');
+  useEffect(() => {
+    fetchData()
+  }, [])
   
     const fetchData = () => {
       fetch(URL)

@@ -1,8 +1,25 @@
-import { createContext } from "react";
+import React from 'react'
 
-const LoginContext = createContext({
-  isAuth: Boolean,
-  setLogin: (login) => {}
-});
+const context = {
+	isAuth : true
+}
 
-export default LoginContext;
+let callback = () => {}
+
+export const LoginContext = React.createContext(context)
+
+export const setLoginContext = (newContext) => {
+	callback(newContext)
+}
+
+export const setLoginContextChange = (newCallback) => {
+	callback = newCallback
+}
+// import { createContext } from "react";
+
+// const LoginContext = createContext({
+//   isAuth: Boolean,
+//   setLogin: (login) => {}
+// });
+
+// export default LoginContext;
