@@ -51,3 +51,27 @@
     top: 20%;
     left: 10%;
 }
+
+.table-for-two-b {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 20%;
+    left: 35%;
+}
+
+.table-for-two-c {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 74%;
+    left: 10%;
+}
+
+.table-for-two-d {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 74%;
+    left: 35%;
+}
