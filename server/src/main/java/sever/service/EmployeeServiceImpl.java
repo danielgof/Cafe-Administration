@@ -10,7 +10,6 @@ import sever.repo.EmployeeRepo;
 import sever.repo.PositionRepo;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +37,22 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public ModelEmployee deletePostion(Long employee_id, Long positionId) {
-        return null;
+    public void deletePostion(Long employee_id) {
+        employeeRepo.deleteById(employee_id);
+    }
+
+    @Override
+    public void updEmployeeName(String name, String new_name) {
+        employeeRepo.updName(name, new_name);
+    }
+
+    @Override
+    public void updEmployeeLastName(String lastname, String new_lastname) {
+        employeeRepo.updLastname(lastname, new_lastname);
+    }
+
+    @Override
+    public void updEmployeeDob(String dob, String new_dob) {
+        employeeRepo.updDob(dob, new_dob);
     }
 }
