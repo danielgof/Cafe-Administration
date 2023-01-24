@@ -6,16 +6,10 @@ margin: 0;
 box-sizing: border-box;
 }
 
-.background .shape{
-  height: 200px;
-  width: 200px;
-  position: absolute;
-  border-radius: 50%;
-}
 
 .login-manager-form {
-  height: 70%;
-  width: 30%;
+  height: 520px;
+  width: 400px;
   background-color: #f7f7f7b7;
   position: absolute;
   transform: translate(-50%,-50%);
@@ -25,16 +19,21 @@ box-sizing: border-box;
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255,255,255,0.1);
   box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
 }
 
 .login-manager-form *{
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #000000;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
-} 
+  color: #000;
+}
 
+.login-manager-form input {
+  color: #000;
+}
 form h3{
   font-size: 32px;
   font-weight: 500;
@@ -48,7 +47,7 @@ label{
   font-size: 16px;
   font-weight: 500;
 }
-.login-manager-form input {
+input{
   display: block;
   height: 50px;
   width: 100%;
