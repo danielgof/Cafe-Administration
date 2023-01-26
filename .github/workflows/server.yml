@@ -31,7 +31,7 @@ jobs:
     - name: print dir
       run: ls
     - name: chose dir on server
-      run: cd server
+      working-directory: ./server
       
     - name: print dir2
       run: ls
