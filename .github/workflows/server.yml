@@ -30,4 +30,4 @@ jobs:
     - name: chose dir on server
       run: cd server
     - name: print dir
-      run: echo "hello"
+      run: ls
