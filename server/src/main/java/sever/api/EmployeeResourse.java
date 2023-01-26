@@ -9,7 +9,6 @@ import sever.api.utils.UpdDob;
 import sever.api.utils.UpdLastName;
 import sever.api.utils.UpdName;
 import sever.domain.ModelEmployee;
-import sever.domain.ModelFood;
 import sever.domain.ModelPosition;
 import sever.repo.EmployeeRepo;
 import sever.repo.PositionRepo;
@@ -55,6 +54,7 @@ public class EmployeeResourse {
     @PutMapping("/upd_dob")
     public ResponseEntity<String> updLastname(@RequestBody UpdDob data) {
         employeeService.updEmployeeDob(data.getDob(), data.getNew_dob());
+        log.info("dob {} was updated for {}", data.getDob(), data.getNew_dob());
         return ResponseEntity.ok().body(data.getNew_dob());
     }
 
