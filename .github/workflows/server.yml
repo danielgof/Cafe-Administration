@@ -32,7 +32,7 @@ jobs:
       run: ls
     - name: chose dir on server
       working-directory: ./server
-      run: ls
+      run: mvn -B package --file pom.xml
     - name: Build with Maven
       run: ls
 #      run: mvn -B package --file pom.xml
