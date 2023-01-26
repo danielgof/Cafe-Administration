@@ -15,6 +15,7 @@ import ManagerMainPage from './Pages/ManagerPages/ManagerMainPage/ManagerMainPag
 import OrderContext from './Components/WaiterComponents/Order/OrderContext/OrderContext';
 import PersonalPage from './Pages/ManagerPages/PersonalPage/PersonalPage';
 import TableReservationPage from './Pages/WaiterPage/TableResrvationPage/TableReservationPage';
+import AddEmployee from './Pages/ManagerPages/AddEmployee/AddEmployee';
 
 function App() {
   // const [login, setLogin] = useState(true);
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/order_create" element={<FinishOrderPage />} />
                 <Route path="/analytics" element={<AnalyticsPage />} />
                 <Route path="/personal_managment" element={<PersonalPage />} />
+                <Route path="/add_empl" element={<AddEmployee />} />
                 <Route path="/table_reservation" element={<TableReservationPage />} />
             </Route>        
           </Routes>

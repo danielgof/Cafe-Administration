@@ -28,7 +28,8 @@ public class Application {
                           FoodService foodService,
                           OrderService orderService,
                           EmployeeService employeeService,
-                          PositionService positionService
+                          PositionService positionService,
+                          MonthVisitorsService monthVisitorsService
     ) {
         return args -> {
             userService.saveRole(new ModelAuthRole("ROLE_ADMIN"));
@@ -97,6 +98,15 @@ public class Application {
 
             positionService.savePosition(new ModelPosition("Cloud Storage", "SE"));
             employeeService.addPositionToEmployee(1l, 1L);
+
+            monthVisitorsService.save(new ModelMonthVisitors("Jan", 4000, 2400));
+            monthVisitorsService.save(new ModelMonthVisitors("Feb", 3000, 1398));
+            monthVisitorsService.save(new ModelMonthVisitors("Mar", 2000, 9800));
+            monthVisitorsService.save(new ModelMonthVisitors("Apr", 2780, 3908));
+            monthVisitorsService.save(new ModelMonthVisitors("May", 1890, 4800));
+            monthVisitorsService.save(new ModelMonthVisitors("Jun", 2390, 3800));
+            monthVisitorsService.save(new ModelMonthVisitors("Jul", 3490, 4300));
+//            monthVisitorsService.save(new ModelMonthVisitors("Apr", 2780, 3908));
         };
     }
 }

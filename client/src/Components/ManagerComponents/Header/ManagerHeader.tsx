@@ -25,6 +25,7 @@ const ManagerHeader = () => {
             <Nav className="me-auto">
               <Nav.Link href="/analytics">Analytics</Nav.Link>
               <Nav.Link href="/personal_managment">Personal Managment</Nav.Link>
+              <Nav.Link href="/add_empl">Add Employee</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="/">

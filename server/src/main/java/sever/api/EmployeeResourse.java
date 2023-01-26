@@ -29,12 +29,12 @@ public class EmployeeResourse {
     public ResponseEntity<List<ModelEmployee>> getEmployees() {
         return ResponseEntity.ok().body(employeeService.getAllEmployees());
     }
-    @PostMapping("/save_employee")
+    @PostMapping("/save")
     public ResponseEntity<ModelEmployee> saveEmployee(@RequestBody
                                                       ModelEmployee employee) {
         return ResponseEntity.ok().body(employeeService.saveEmployee(employee));
     }
-    @DeleteMapping("/delete_employee")
+    @DeleteMapping("/delete")
     public ResponseEntity<ModelEmployee> deleteEmployee(@RequestBody
                                                         ModelEmployee employee) {
         employeeService.deletePostion(employee.getId());
