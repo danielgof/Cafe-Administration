@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: CI server
 
 on:
   push:
@@ -27,7 +27,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+    
+    - name: print dir
+      run: ls
     - name: chose dir on server
       run: cd server
-    - name: print dir
+      
+    - name: print dir2
       run: ls
