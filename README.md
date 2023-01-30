@@ -12,7 +12,6 @@
 ```
 ____
 
-
 ### server
 - To run server you will need both PostgreSQL and Java 17
 So, make sure you have installed them
@@ -20,3 +19,5 @@ ____
 ### start application
 - If all dependencies are installed, just click on "start.bat" to run Software
 ____
+## Architecture
+<img src="./app.drawio.png" alt="text" title="OArchitecture">
