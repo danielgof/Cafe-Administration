@@ -14,7 +14,7 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
-    "suppressImplicitAnyIndexErrors": true,
+    // "suppressImplicitAnyIndexErrors": true,
     "strictNullChecks":false,
     "strictPropertyInitialization": false,
     "moduleResolution": "node",
