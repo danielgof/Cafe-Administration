@@ -1,4 +1,4 @@
-package sever;
+package server;
 
 import sever.domain.*;
 import sever.service.*;
